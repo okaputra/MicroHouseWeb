@@ -108,7 +108,7 @@
                       </div>
                         <div class="form-group">
                           <label for="residencefoto">Residence Photo</label>
-                          <input type="file" class="form-control-file" id="residencefoto" name="filee">
+                          <input type="file" class="form-control-file" id="residencefoto" name="filee" required>
                         </div>
                         <div class="footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
