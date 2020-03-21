@@ -62,75 +62,60 @@
 
         <div class="container">
             <div class="row" style="margin-top:109px">
-            
-                <form action="/updateResidence" method="POST" style="width:100%">
-                    <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3">
-                    </div>
-                    </div>
-                </form>
+                @foreach ($residence as $rs)
+                <form action="/updateResidence" method="POST" style="width:100%"  enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                      <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="hidden" class="form-control" id="address" value="{{$rs->id}}" name="id">
+                        <input type="address" class="form-control" id="address" value="{{$rs->Address}}" name="adrr">
+                      </div>
+                      <div class="form-group">
+                        <label for="NumUnit">Number of Unit</label>
+                        <input type="NumUnit" class="form-control" id="NumUnit" value="{{$rs->NumberOfUnit}}" name="nouu">
+                      </div>
+                      <div class="form-group">
+                        <label for="SizePerUnit">Size per Unit</label>
+                        <input type="SizePerUnit" class="form-control" id="SizePerUnit" value="{{$rs->SizeUnit}}" name="spuu">
+                      </div>
+                      <div class="form-group">
+                        <label for="MonthlyRental">Monthly Rental</label>
+                        <input type="MonthlyRental" class="form-control" id="MonthlyRental" value="{{$rs->MonthlyRental}}" name="mRnn">
+                      </div>
+                      <div class="form-group">
+                        <label for="availability">Availability</label>
+                        <input type="availability" class="form-control" id="availability" value="{{$rs->Availability}}" name="avaa">
+                      </div>
+                      <div class="form-group">
+                        <label for="bedroom">Bedroom</label>
+                        <input type="bedroom" class="form-control" id="bedroom" value="{{$rs->Bedroom}}" name="bedd">
+                      </div>
+                      <div class="form-group">
+                        <label for="bathroom">Bathroom</label>
+                        <input type="bathroom" class="form-control" id="bathroom" value="{{$rs->Bathroom}}" name="bathh">
+                      </div>
+                      <div class="form-group">
+                        <label for="livingroom">Living room</label>
+                        <input type="livingroom" class="form-control" id="livingroom" value="{{$rs->livingRoom}}" name="livv">
+                      </div>
+                      <div class="form-group">
+                        <label for="garage">Garage</label>
+                        <input type="garage" class="form-control" id="garage" value="{{$rs->Garage}}" name="garr">
+                      </div>
+                      <div class="form-group">
+                        <label for="pool">Pool</label>
+                        <input type="pool" class="form-control" id="pool" value="{{$rs->Pool}}" name="poll">
+                      </div>
+                        <div class="form-group">
+                          <label for="residencefoto">Residence Photo</label>
+                          <input type="file" class="form-control-file" id="residencefoto" name="filee">
+                        </div>
+                        <div class="footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                    @endforeach
             </div>
             </div>
             </div>

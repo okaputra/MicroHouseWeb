@@ -93,9 +93,30 @@ class HousingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $file = $request->file('filee');
+
+        $file_name = time()."_".$file->getClientOriginalName();
+
+        $fileDestination = 'data_file';
+        $file->move($fileDestination,$file_name);
+
+        DB::table('residence')->where('id',$request->id)->update([
+            'Address'=>$request->adrr,
+            'NumberOfUnit'=>$request->nouu,
+            'SizeUnit'=>$request->spuu,
+            'MonthlyRental'=>$request->mRnn,
+            'Availability'=>$request->avaa,
+            'Bedroom'=>$request->bedd,
+            'Bathroom'=>$request->bathh,
+            'livingRoom'=>$request->livv,
+            'Garage'=>$request->garr,
+            'Pool'=>$request->poll,
+            'Image'=>$file_name,
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/rent')->with('success','Data Updated Successfully');
     }
 
     /**
