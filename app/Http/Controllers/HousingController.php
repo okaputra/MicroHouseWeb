@@ -83,7 +83,7 @@ class HousingController extends Controller
     public function edit($id)
     {
         $residence = DB::table('residence')->where('id',$id)->get();
-        return view('detail',['residence'=> $residence]);
+        return view('edit',['residence'=> $residence]);
     }
 
     /**
