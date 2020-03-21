@@ -24,3 +24,4 @@ Route::get('/rent', 'HousingController@index');
 Route::post('/storeNewR', 'HousingController@store');
 Route::get('/delete/{id}', 'HousingController@destroy');
 Route::get('/showDetail/{id}', 'HousingController@show');
+Route::get('/editResidence/{id}', 'HousingController@edit');
