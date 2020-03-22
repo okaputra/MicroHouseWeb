@@ -29,14 +29,14 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/rent">Rent House</a>
+            <a class="nav-link" id="navlink" href="/rent">Residence</a>
         </li>
         
         <li class="nav-item">
             <a class="nav-link" id="navlink" href="applicanttable.php">Application</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" id="navlink" href="#aboutus">About Us</a>
+        <li class="nav-item">
+            <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
         </li>
         <li class="nav-item dropdown">
         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">

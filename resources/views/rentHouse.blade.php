@@ -30,7 +30,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/rent">Rent House</a>
+            <a class="nav-link" id="navlink" href="/rent">Residence</a>
         </li>
         
         <li class="nav-item">
