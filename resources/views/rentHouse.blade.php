@@ -34,6 +34,9 @@
         </li>
         
         <li class="nav-item">
+            <a class="nav-link" id="navlink" href="/application">Applicantion</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
         </li>
         <li class="nav-item dropdown">

@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//routes for residence
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/rent', 'HousingController@index');
 Route::post('/storeNewR', 'HousingController@store');
@@ -26,3 +27,6 @@ Route::get('/delete/{id}', 'HousingController@destroy');
 Route::get('/showDetail/{id}', 'HousingController@show');
 Route::get('/editResidence/{id}', 'HousingController@edit');
 Route::post('/updateResidence', 'HousingController@update');
+
+//routes for application
+Route::get('/application','ApplicationController@index');
