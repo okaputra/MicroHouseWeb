@@ -69,11 +69,76 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="/submitApplication" class="btn btn-primary" style="margin-right:20px">
+                    <a href="/submitApplication" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
                         Submit Application
                     </a>
                     <br>
                 </div>
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModalApplicationScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalScrollableTitle">Details Residence Information</h5>
+                        </div>
+                        <div class="modal-body">
+                          <form action="/storeNewR" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                              <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="address" class="form-control" id="address" name="adr" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="NumUnit">Number of Unit</label>
+                                <input type="NumUnit" class="form-control" id="NumUnit" name="nou" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="SizePerUnit">Size per Unit</label>
+                                <input type="SizePerUnit" class="form-control" id="SizePerUnit" name="spu" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="MonthlyRental">Monthly Rental</label>
+                                <input type="MonthlyRental" class="form-control" id="MonthlyRental" name="mRn" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="availability">Availability</label>
+                                <input type="availability" class="form-control" id="availability" name="ava" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="bedroom">Bedroom</label>
+                                <input type="bedroom" class="form-control" id="bedroom" name="bed" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="bathroom">Bathroom</label>
+                                <input type="bathroom" class="form-control" id="bathroom" name="bath" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="livingroom">Living room</label>
+                                <input type="livingroom" class="form-control" id="livingroom" name="liv" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="garage">Garage</label>
+                                <input type="garage" class="form-control" id="garage" name="gar" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="pool">Pool</label>
+                                <input type="pool" class="form-control" id="pool" name="pol" required>
+                              </div>
+                                <div class="form-group">
+                                  <label for="residencefoto">Residence Photo</label>
+                                  <input type="file" class="form-control-file" id="residencefoto" name="file">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>    
+                    </div>
+                </div>
+                  @include('sweetalert::alert')
+
+
             </div>
         </div>
     </div>
