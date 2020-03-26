@@ -13,11 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
-Auth::routes();
+// Auth::routes();
+
+//routes login
+
+Route::get('/', 'AuthController@getLogin')->middleware('guest')->name('login');
+Route::post('/', 'AuthController@postLogin');
+Route::get('/register','AuthController@getRegister')->name('register');
+Route::post('/register','AuthController@postRegister')->name('register')->middleware('guest');
+Route::post('/logout','AuthController@logOut')->middleware('auth')->name('logout');
 
 //routes for residence
 Route::get('/home', 'HomeController@index')->name('home');

@@ -310,7 +310,6 @@ textarea {
   resize: vertical;
 }
 
-
 fieldset {
   min-width: 0;
   padding: 0;
@@ -2764,14 +2763,14 @@ fieldset:disabled a.btn {
 
 .btn-warning {
   color: #212529;
-  background-color: greenyellow;
-  border-color: greenyellow;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }
 
 .btn-warning:hover {
   color: #212529;
-  background-color: greenyellow;
-  border-color: green;
+  background-color: #e0a800;
+  border-color: #d39e00;
 }
 
 .btn-warning:focus, .btn-warning.focus {
@@ -16456,7 +16455,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .login-content .login-box.flipped {
-  min-height: 300px;
+  min-height: 550px;
 }
 
 .login-content .login-box.flipped .login-form {
