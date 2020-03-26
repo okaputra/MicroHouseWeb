@@ -28,13 +28,13 @@ Route::post('/register','AuthController@postRegister')->name('register')->middle
 Route::post('/logout','AuthController@logOut')->middleware('auth')->name('logout');
 
 //routes for residence
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/rent', 'HousingController@index');
-Route::post('/storeNewR', 'HousingController@store');
-Route::get('/delete/{id}', 'HousingController@destroy');
-Route::get('/showDetail/{id}', 'HousingController@show');
-Route::get('/editResidence/{id}', 'HousingController@edit');
-Route::post('/updateResidence', 'HousingController@update');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/rent', 'HousingController@index')->middleware('auth');
+Route::post('/storeNewR', 'HousingController@store')->middleware('auth');
+Route::get('/delete/{id}', 'HousingController@destroy')->middleware('auth');
+Route::get('/showDetail/{id}', 'HousingController@show')->middleware('auth');
+Route::get('/editResidence/{id}', 'HousingController@edit')->middleware('auth');
+Route::post('/updateResidence', 'HousingController@update')->middleware('auth');
 
 //routes for application
-Route::get('/application','ApplicationController@index');
+Route::get('/application','ApplicationController@index')->middleware('auth');
