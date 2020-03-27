@@ -115,7 +115,7 @@
                         </div>
                         <div class="footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                     @endforeach
