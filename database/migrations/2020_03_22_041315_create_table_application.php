@@ -14,7 +14,7 @@ class CreateTableApplication extends Migration
     public function up()
     {
         Schema::create('table_application', function (Blueprint $table) {
-            $table->id('applicationID');
+            $table->id();
             $table->string('applicationDate');
             $table->string('requiredMonth');
             $table->string('requiredYear');

@@ -38,3 +38,6 @@ Route::post('/updateResidence', 'HousingController@update')->middleware('auth');
 
 //routes for application
 Route::get('/application','ApplicationController@index')->middleware('auth');
+Route::post('/submitApplication','ApplicationController@store')->middleware('auth');
+Route::get('/apkDetail/{id}','ApplicationController@show')->middleware('auth');
+Route::get('/deleteApk/{id}','ApplicationController@destroy')->middleware('auth');

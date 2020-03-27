@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApplicationController extends Controller
 {
@@ -13,7 +14,8 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        return view('Application');
+        $application = DB::table('table_application')->get();
+        return view('Application',['application' => $application]);
     }
 
     /**
@@ -34,7 +36,13 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('table_application')->insert([
+            'applicationDate'=>$request->applicationDate,
+            'requiredMonth'=>$request->requiredMonth,
+            'requiredYear'=>$request->requiredYear,
+            'status'=>$request->status,
+        ]);
+        return redirect('/application')->with('success','Application Submited Successfully');
     }
 
     /**
@@ -45,7 +53,8 @@ class ApplicationController extends Controller
      */
     public function show($id)
     {
-        //
+        $detailApk = DB::table('table_application')->find($id);
+        return view('applicationDetail',compact('detailApk'));
     }
 
     /**
@@ -79,6 +88,7 @@ class ApplicationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('table_application')->where('id',$id)->delete();
+        return redirect('/application')->with('success','Application Deleted Successfully');
     }
 }

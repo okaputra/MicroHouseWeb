@@ -199,7 +199,7 @@
           showCancelButton: true,
           confirmButtonColor: '#09bf25',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Hapus Data!'
+          confirmButtonText: 'Delete!'
           }).then((result) => {
           if (result.value) {
             document.location.href = tombolDelete;

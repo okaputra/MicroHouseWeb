@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- MY FONTS -->
-    
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     
 
      <!-- MY CSS -->
@@ -74,6 +75,7 @@
                     </a>
                     <br>
                 </div>
+                
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModalApplicationScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -82,52 +84,24 @@
                           <h5 class="modal-title" id="exampleModalScrollableTitle">Details Residence Information</h5>
                         </div>
                         <div class="modal-body">
-                          <form action="/storeNewR" method="POST" enctype="multipart/form-data">
+                          <form action="/submitApplication" method="POST">
                             {{ csrf_field() }}
                               <div class="form-group">
-                                <label for="address">Address</label>
-                                <input type="address" class="form-control" id="address" name="adr" required>
+                                <label for="ApkDate">Application Date</label>
+                                <input type="date" class="form-control" id="apkDate" name="applicationDate" required>
                               </div>
                               <div class="form-group">
-                                <label for="NumUnit">Number of Unit</label>
-                                <input type="NumUnit" class="form-control" id="NumUnit" name="nou" required>
+                                <label for="RqMonth">Required Month</label>
+                                <input type="text" class="form-control" id="RqMonth" name="requiredMonth" required>
                               </div>
                               <div class="form-group">
-                                <label for="SizePerUnit">Size per Unit</label>
-                                <input type="SizePerUnit" class="form-control" id="SizePerUnit" name="spu" required>
+                                <label for="RqYear">Required Year</label>
+                                <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
                               </div>
                               <div class="form-group">
-                                <label for="MonthlyRental">Monthly Rental</label>
-                                <input type="MonthlyRental" class="form-control" id="MonthlyRental" name="mRn" required>
+                                <label for="status">Status</label>
+                                <input type="text" class="form-control" id="stts" name="status" required>
                               </div>
-                              <div class="form-group">
-                                <label for="availability">Availability</label>
-                                <input type="availability" class="form-control" id="availability" name="ava" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="bedroom">Bedroom</label>
-                                <input type="bedroom" class="form-control" id="bedroom" name="bed" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="bathroom">Bathroom</label>
-                                <input type="bathroom" class="form-control" id="bathroom" name="bath" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="livingroom">Living room</label>
-                                <input type="livingroom" class="form-control" id="livingroom" name="liv" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="garage">Garage</label>
-                                <input type="garage" class="form-control" id="garage" name="gar" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="pool">Pool</label>
-                                <input type="pool" class="form-control" id="pool" name="pol" required>
-                              </div>
-                                <div class="form-group">
-                                  <label for="residencefoto">Residence Photo</label>
-                                  <input type="file" class="form-control-file" id="residencefoto" name="file">
-                                </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -136,15 +110,58 @@
                         </div>    
                     </div>
                 </div>
-                  @include('sweetalert::alert')
-
-
             </div>
         </div>
     </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th width="15%">Application ID</th>
+          <th style="text-align:center">Information Status</th>
+          <th style="width:170px; text-align:center">OPSI</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($application as $apk)
+        <tr>
+          <td>{{$apk->id}}</td>
+          <td>{{$apk->status}}</td>
+          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >VIEW</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
   @include('sweetalert::alert')
   
   
+  <script>
+    $('.delApk').on('click',function(e){
+      e.preventDefault();
+      const delButton = $(this).attr('href');
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "Application detail will be Deleted!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#09bf25',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Delete!'
+        }).then((result) => {
+        if (result.value) {
+          document.location.href = delButton;
+        }else{
+          Swal.fire({
+          title: 'Canceled!',
+          icon: 'error',
+          timer: 1300,
+          showConfirmButton: false, 
+          })
+        }
+      })
+    });
+
+  </script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
