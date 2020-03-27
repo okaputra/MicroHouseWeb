@@ -16,7 +16,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Welcome - MicroHouse</h1>
+        <h1>--MICROHouse--</h1>
       </div>
       <div class="login-box"  style="min-height:550px">
         <form class="login-form" method="POST" action="{{ route('register') }}">
