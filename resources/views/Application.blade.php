@@ -118,7 +118,7 @@
         <tr>
           <th width="15%">Application ID</th>
           <th style="text-align:center">Information Status</th>
-          <th style="width:170px; text-align:center">OPSI</th>
+          <th style="width:183px; text-align:center">OPSI</th>
         </tr>
       </thead>
       <tbody>
@@ -126,7 +126,7 @@
         <tr>
           <td>{{$apk->id}}</td>
           <td>{{$apk->status}}</td>
-          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >VIEW</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
+          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >DETAIL</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
         </tr>
         @endforeach
       </tbody>

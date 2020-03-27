@@ -159,7 +159,7 @@
         <tr>
           <th width="1%">Preview</th>
           <th>Information Status</th>
-          <th style="width:170px">OPSI</th>
+          <th style="width:183px">OPSI</th>
         </tr>
       </thead>
       <tbody>
@@ -167,7 +167,7 @@
         <tr>
           <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
           <td>{{$rs->Availability}}</td>
-          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >VIEW</a> <a href="/delete/{{ $rs->id }}" class="btn btn-danger delRes" >DELETE</a> </td>
+          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >DETAIL</a> <a href="/delete/{{ $rs->id }}" class="btn btn-danger delRes" >DELETE</a> </td>
         </tr>
         @endforeach
       </tbody>
