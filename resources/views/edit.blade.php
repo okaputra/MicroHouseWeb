@@ -111,7 +111,7 @@
                       </div>
                         <div class="form-group">
                           <label for="residencefoto">Residence Photo</label>
-                          <input type="file" class="form-control-file" id="residencefoto" name="filee" required>
+                          <input type="file" class="form-control-file" value="{{ url('/data_file/'.$rs->Image) }}" id="residencefoto" name="filee" required>
                         </div>
                         <div class="footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

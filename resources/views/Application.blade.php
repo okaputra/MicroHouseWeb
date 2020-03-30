@@ -86,22 +86,22 @@
                         <div class="modal-body">
                           <form action="/submitApplication" method="POST">
                             {{ csrf_field() }}
-                              <div class="form-group">
-                                <label for="ApkDate">Application Date</label>
-                                <input type="date" class="form-control" id="apkDate" name="applicationDate" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="RqMonth">Required Month</label>
-                                <input type="text" class="form-control" id="RqMonth" name="requiredMonth" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="RqYear">Required Year</label>
-                                <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="status">Status</label>
-                                <input type="text" class="form-control" id="stts" name="status" required>
-                              </div>
+                                <div class="form-group">
+                                  <label for="ApkDate">Application Date</label>
+                                  <input type="date" class="form-control" id="apkDate" name="applicationDate" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="RqMonth">Required Month</label>
+                                  <input type="text" class="form-control" id="RqMonth" name="requiredMonth" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="RqYear">Required Year</label>
+                                  <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
+                                </div>
+                                <div class="form-group">
+                                  <label for="status">Status</label>
+                                  <input type="text" class="form-control" id="stts" name="status" required>
+                                </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                                   <button type="submit" class="btn btn-primary">Submit</button>
