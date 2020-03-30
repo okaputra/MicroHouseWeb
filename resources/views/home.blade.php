@@ -111,7 +111,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img1.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
@@ -121,7 +121,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img11.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img12.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
@@ -142,7 +142,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img13.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
@@ -153,7 +153,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img14.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
@@ -164,7 +164,7 @@
           <h5 class="card-title" style="text-align:center">Adverticement</h5>
           <img src="images/img7.jpg" class="d-block w-100" style="height:292px">
           <br>
-          <a href="#" class="btn btn-primary">RM100.000</a>
+          <a href="/rent" class="btn btn-info">Need Residence?</a>
         </div>
       </div>
     </div>
