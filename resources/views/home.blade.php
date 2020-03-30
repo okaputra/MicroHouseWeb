@@ -62,17 +62,46 @@
 </nav>
 <!-- end of navbar -->
 
-<div class="jumbotron jumbotron-fluid" style="background-image:url(images/img1.jpg)">
-
-  <div class="container text-center">
-  
-    <h1 class="display-4">MicroHouse</h1>
-    
-    
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/img6.jpg" class="d-block w-100" style="height:700px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to <i>--MICROhouse--</i></h5>
+          <p>Using this web you can find your favorite <i>Residence</i> </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/img1.jpg" class="d-block w-100" style="height:700px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Easy to use</h5>
+          <p>Using this web you can apply or submit New Residence</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/img5.jpg" class="d-block w-100"style="height:700px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>User Friendly</h5>
+          <p>Easy to use, give user more best experience while using <i>MICROhouse</i> Web</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-</div>
 
-<div class="container" id="aboutus">
+{{-- <div class="container" id="aboutus">
   <div class="row">
   <div class="col text-center">
   <h1>About Us</h1>
@@ -88,89 +117,9 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
    </div>
   </div>
-</div>
+</div> --}}
   
-  {{-- <section id="contact" class="contact">
-    <div class="container">
-      <div class="row pt-4 mb-4">
-        <div class="col text-center">
-          
-          <h2>Contact Us</h2>
-
-
-        </div>
-
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-4">
-          <div class="card text-white bg-primary mb-3 text-center" >
-            
-            <div class="card-body text-center">
-              <h5 class="card-title">Contact</h5>
-              <p class="card-text">Our Details Contact Here.</p>
-
-            </div>
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><h5>Location</h5></li>
-            <li class="list-group-item">Our Office</li>
-            <li class="list-group-item">Kuala Lumpur,Malaysia</li>
-            <li class="list-group-item">Phone +612345678</li>
-          </ul>
-
-        </div>
-
-        <div class="col-lg-6">
-          <form>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="email">
-              <small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password">
-            </div>
-             <div class="form-group">
-              <label for="message">message</label>
-             <textarea name="message" id="message" class="form-control"></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-                    
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <footer class="bg-dark text-white pt-3 mb-4">
-    {{-- <div class="container ">
-      <div class="row text-center">
-      
-      <div class="col ">
-        <p>copyright MicroHouse Web 2020</p>
-        
-      </div>
-    </div>
-    </div> --}}
-  {{-- </footer> --}}
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
