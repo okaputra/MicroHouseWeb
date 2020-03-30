@@ -115,7 +115,6 @@ class HousingController extends Controller
             'Pool'=>$request->poll,
             'Image'=>$file_name,
         ]);
-        // alihkan halaman ke halaman pegawai
         return redirect('/rent')->with('success','Data Updated Successfully');
     }
 

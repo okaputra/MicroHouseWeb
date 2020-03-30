@@ -65,7 +65,8 @@ class ApplicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $application = DB::table('table_application')->where('id',$id)->get();
+        return view('editApplication',['application'=> $application]);
     }
 
     /**
@@ -75,9 +76,15 @@ class ApplicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('table_application')->where('id',$request->id)->update([
+            'applicationDate'=>$request->apkDate,
+            'requiredMonth'=>$request->rqMonth,
+            'requiredYear'=>$request->rqYear,
+            'status'=>$request->sts,
+        ]);
+        return redirect('/application')->with('success','Data Updated Successfully');
     }
 
     /**
