@@ -108,7 +108,7 @@
     <div class="col-sm-4">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img1.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM100.000</a>
@@ -118,7 +118,7 @@
     <div class="col-sm-4">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img11.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM200.000</a>
@@ -128,7 +128,7 @@
     <div class="col-sm-4">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img12.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM250.000</a>
@@ -139,7 +139,7 @@
     <div class="col-sm-4" style="margin-top:10px">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img13.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM300.000</a>
@@ -150,7 +150,7 @@
     <div class="col-sm-4" style="margin-top:10px">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img14.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM100.000</a>
@@ -161,7 +161,7 @@
     <div class="col-sm-4" style="margin-top:10px">
       <div class="card">
         <div class="card-body" style="height:425px">
-          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <h5 class="card-title" style="text-align:center">Advertisement</h5>
           <img src="images/img7.jpg" class="d-block w-100" style="height:292px">
           <br>
           <a href="/rent" class="btn btn-warning">RM100.000</a>
