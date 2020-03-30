@@ -18,7 +18,7 @@
       <div class="logo">
         <h1>--MICROHouse--</h1>
       </div>
-      <div class="login-box"  style="min-height:550px">
+      <div class="login-box"  style="min-height:580px">
         <form class="login-form" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN UP</h3>
@@ -39,6 +39,16 @@
           @if($errors->has('email'))
             <div class="invalid-feedback" style="display:block">
                 {{ $errors->first('email') }}
+            </div>
+          @endif
+          
+          <div class="form-group">
+            <label class="control-label">Month Salary</label>
+            <input class="form-control {{ $errors->has('monthSalary') ? 'is-invalid': ' ' }}" type="text" placeholder="Month Salary" value="{{ old('monthSalary') }}" name="monthSalary" required>
+          </div>
+          @if($errors->has('monthSalary'))
+            <div class="invalid-feedback" style="display:block">
+                {{ $errors->first('monthSalary') }}
             </div>
           @endif
 
