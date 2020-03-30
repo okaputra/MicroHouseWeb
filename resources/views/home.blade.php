@@ -101,6 +101,74 @@
     </a>
   </div>
 
+  <br>
+  <br>
+  {{-- Advertise --}}
+  <div class="row" style="margin:auto;margin-bottom:20px">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img1.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img11.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img12.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-4" style="margin-top:10px">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img13.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-4" style="margin-top:10px">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img14.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-sm-4" style="margin-top:10px">
+      <div class="card">
+        <div class="card-body" style="height:425px">
+          <h5 class="card-title" style="text-align:center">Adverticement</h5>
+          <img src="images/img7.jpg" class="d-block w-100" style="height:292px">
+          <br>
+          <a href="#" class="btn btn-primary">RM100.000</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {{-- <div class="container" id="aboutus">
   <div class="row">
   <div class="col text-center">
