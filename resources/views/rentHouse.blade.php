@@ -36,9 +36,9 @@
         <li class="nav-item">
             <a class="nav-link" id="navlink" href="/application">Application</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
-        </li>
+        </li> --}}
         <li class="nav-item dropdown">
         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
             {{ Auth::user()->name }}
