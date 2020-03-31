@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Redirect;
+use Illuminate\Support\MessageBag;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -12,7 +14,8 @@ class AuthController extends Controller
     }
     public function postLogin(Request $request){
         if(!\Auth::attempt(['email' => $request->email, 'password'=> $request->password])){
-            return redirect()->back();
+            $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
+            return Redirect::back()->withErrors($errors);
         }
 
         return redirect('/home');

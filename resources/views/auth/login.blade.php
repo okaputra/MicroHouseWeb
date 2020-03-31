@@ -24,10 +24,10 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN IN</h3>
           <div class="form-group">
             <label class="control-label">USERNAME</label>
-            <input class="form-control {{ $errors->has('email') ? 'is-invalid': ' ' }}" type="email" placeholder="Email" value="{{ old('email') }}" name="email" required>
+            <input class="form-control {{ $errors->has('email') ? 'is-invalid': ' ' }}" type="email" placeholder="Email" name="email" required>
           </div>
           @if($errors->has('email'))
-            <div class="invalid-feedback" style="display:block">
+            <div class="invalid-feedback" >
                 {{ $errors->first('email') }}
             </div>
           @endif
