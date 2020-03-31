@@ -157,9 +157,9 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th width="1%">Preview</th>
-          <th>Information Status</th>
-          <th style="width:283px">OPSI</th>
+          <th width="1%" style="text-align:center">Preview</th>
+          <th style="text-align:center">Information Status</th>
+          <th style="width:283px;text-align:center">OPTION</th>
         </tr>
       </thead>
       <tbody>
