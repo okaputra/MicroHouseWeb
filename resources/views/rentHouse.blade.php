@@ -159,7 +159,7 @@
         <tr>
           <th width="1%" style="text-align:center">Preview</th>
           <th style="text-align:center">Information Status</th>
-          <th style="width:283px;text-align:center">OPTION</th>
+          <th style="width:181px;text-align:center">OPTION</th>
         </tr>
       </thead>
       <tbody>
@@ -167,7 +167,7 @@
         <tr>
           <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
           <td>{{$rs->Availability}}</td>
-          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >DETAIL</a> <a href="/delete/{{ $rs->id }}" class="btn btn-danger delRes" >DELETE</a><a href="#" style="margin-left:4px" class="btn btn-warning" >ALLOCATE</a> </td>
+          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >DETAIL</a> <a href="/delete/{{ $rs->id }}" class="btn btn-danger delRes" >DELETE</a></td>
         </tr>
         @endforeach
       </tbody>

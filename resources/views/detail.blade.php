@@ -67,6 +67,7 @@
             <img src="{{ url('/data_file/'.$data->Image) }}" class="card-img-top" alt="">
           </div>
           <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
+          <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
           <table class="table table-striped">
             <thead>
               <tr>

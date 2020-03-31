@@ -118,7 +118,7 @@
         <tr>
           <th width="15%">Application ID</th>
           <th style="text-align:center">Information Status</th>
-          <th style="width:183px; text-align:center">OPSI</th>
+          <th style="width:183px; text-align:center">OPTION</th>
         </tr>
       </thead>
       <tbody>
