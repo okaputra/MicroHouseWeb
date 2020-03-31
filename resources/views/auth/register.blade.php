@@ -18,7 +18,7 @@
       <div class="logo">
         <h1>--MICROHouse--</h1>
       </div>
-      <div class="login-box"  style="min-height:580px">
+      <div class="login-box"  style="min-height:600px">
         <form class="login-form" method="POST" action="{{ route('register') }}">
         {{ csrf_field() }}
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>SIGN UP</h3>
