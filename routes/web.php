@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 //routes login
-
 Route::get('/', 'AuthController@getLogin')->middleware('guest')->name('login');
 Route::post('/', 'AuthController@postLogin');
 Route::get('/register','AuthController@getRegister')->name('register');
 Route::post('/register','AuthController@postRegister')->name('register')->middleware('guest');
 
+//this route only when user login as Officer
 Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     
     //routes for residence
@@ -46,12 +46,12 @@ Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     Route::post('/logout','AuthController@logOut')->name('logout');
 });
 
-Route::group(['middleware' => ['auth','checkRole:officer,applicant']],function(){
+//this route only when user login as Applicant
+Route::group(['middleware' => ['auth','checkRole:applicant']],function(){
     
     //routes for residence
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/rent', 'HousingController@index');
-    Route::get('/editResidence/{id}', 'HousingController@edit');
     Route::get('/showDetail/{id}', 'HousingController@show');
     
     //routes for application
