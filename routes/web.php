@@ -39,7 +39,6 @@ Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     
     //routes for application
     Route::get('/application','ApplicationController@index');
-    // Route::post('/submitApplication','ApplicationController@store');
     Route::get('/apkDetail/{id}','ApplicationController@show');
     Route::get('/deleteApk/{id}','ApplicationController@destroy');
     Route::get('/editApplication/{id}', 'ApplicationController@edit');
