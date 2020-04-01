@@ -67,7 +67,12 @@
             <img src="{{ url('/data_file/'.$data->Image) }}" class="card-img-top" alt="">
           </div>
           @if(auth()->user()->roles=='officer')
-          <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
+            <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
+          @endif
+          @if(auth()->user()->roles=='applicant')
+            <a href="/submitApplication" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
+              Submit Application
+            </a>
           @endif
           <table class="table table-striped">
             <thead>
@@ -130,6 +135,40 @@
               </tr>
             </tbody>
           </table>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalApplicationScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">Details Application Information</h5>
+                </div>
+                <div class="modal-body">
+                  <form action="/submitApplication" method="POST">
+                    {{ csrf_field() }}
+                        <div class="form-group">
+                          <label for="ApkDate">Application Date</label>
+                          <input type="date" class="form-control" id="apkDate" name="applicationDate" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="RqMonth">Required Month</label>
+                          <input type="text" class="form-control" id="RqMonth" name="requiredMonth" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="RqYear">Required Year</label>
+                          <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="status">Status</label>
+                          <input type="text" class="form-control" id="stts" name="status" required>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </div>
           
   </div>
   @include('sweetalert::alert')
