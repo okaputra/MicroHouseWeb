@@ -59,7 +59,7 @@ class HousingController extends Controller
             'Pool'=>$request->pol,
             'Image'=>$file_name,
         ]);
-        return redirect('/rent')->with('success','Data Adding Successfully');
+        return redirect('/rent')->with('success','Set up Residence Successfully');
     }
 
     /**

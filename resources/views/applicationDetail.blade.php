@@ -63,9 +63,15 @@
 
 <div class="container">
     <div class="row" style="margin-top:109px">
-          <a href="/editApplication/{{$detailApk->id}}" class="btn btn-success my-3">Edit Application Detail</a>
+          {{-- show when user login as applicant --}}
+          @if(auth()->user()->roles=='applicant')
+            <a href="/editApplication/{{$detailApk->id}}" class="btn btn-success my-3">Edit Application Detail</a>
+          @endif
+
+          {{-- show when user login as officer --}}
           @if(auth()->user()->roles=='officer')
-          <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
+            <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
+            <a href="#" style="margin-left:5px" class="btn btn-danger my-3">Ignore</a>
           @endif
           <table class="table table-striped">
             <thead>

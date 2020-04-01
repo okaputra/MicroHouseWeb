@@ -103,6 +103,8 @@
 
   <br>
   <br>
+
+  @if(auth()->user()->roles=='applicant')
   {{-- Advertise --}}
   <div class="row" style="margin:auto;margin-bottom:20px">
     <div class="col-sm-4">
@@ -169,6 +171,7 @@
       </div>
     </div>
   </div>
+  @endif
 {{-- <div class="container" id="aboutus">
   <div class="row">
   <div class="col text-center">
