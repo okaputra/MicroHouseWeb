@@ -81,9 +81,11 @@
     <div class="row">
       <div class="col">
         <!-- Button trigger modal -->
+        @if(auth()->user()->roles=='officer')
         <a href="/addRes" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable" style="margin-right:20px">
-            Add Residence
+            Set up New Residence
         </a>
+        @endif
         <br>
   
   <!-- Modal -->
@@ -154,6 +156,7 @@
       
     </div>
     </div>
+    @if(auth()->user()->roles=='officer')
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -172,6 +175,28 @@
         @endforeach
       </tbody>
     </table>
+    @endif
+
+    @if(auth()->user()->roles=='applicant')
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th width="1%" style="text-align:center">Preview</th>
+          <th style="text-align:center">Information Status</th>
+          <th style="width:145px;text-align:center">OPTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($residence as $rs)
+        <tr>
+          <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
+          <td>{{$rs->Availability}}</td>
+          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >DETAIL</a></td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+    @endif
 
     <br>
   </div>

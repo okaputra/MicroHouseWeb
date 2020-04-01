@@ -70,9 +70,11 @@
             </div>
             <div class="row">
                 <div class="col">
+                    @if(auth()->user()->roles=='applicant')
                     <a href="/submitApplication" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
                         Submit Application
                     </a>
+                    @endif
                     <br>
                 </div>
                 

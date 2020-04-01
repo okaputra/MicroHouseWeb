@@ -64,7 +64,9 @@
 <div class="container">
     <div class="row" style="margin-top:109px">
           <a href="/editApplication/{{$detailApk->id}}" class="btn btn-success my-3">Edit Application Detail</a>
+          @if(auth()->user()->roles=='officer')
           <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
+          @endif
           <table class="table table-striped">
             <thead>
               <tr>

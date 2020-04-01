@@ -26,7 +26,7 @@ Route::post('/', 'AuthController@postLogin');
 Route::get('/register','AuthController@getRegister')->name('register');
 Route::post('/register','AuthController@postRegister')->name('register')->middleware('guest');
 
-Route::group(['middleware' => 'auth'],function(){
+Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     
     //routes for residence
     Route::get('/home', 'HomeController@index')->name('home');
@@ -36,6 +36,24 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/editResidence/{id}', 'HousingController@edit');
     Route::get('/showDetail/{id}', 'HousingController@show');
     Route::post('/updateResidence', 'HousingController@update');
+    
+    //routes for application
+    Route::get('/application','ApplicationController@index');
+    // Route::post('/submitApplication','ApplicationController@store');
+    Route::get('/apkDetail/{id}','ApplicationController@show');
+    Route::get('/deleteApk/{id}','ApplicationController@destroy');
+    Route::get('/editApplication/{id}', 'ApplicationController@edit');
+    Route::post('/updateApplication', 'ApplicationController@update');
+    Route::post('/logout','AuthController@logOut')->name('logout');
+});
+
+Route::group(['middleware' => ['auth','checkRole:officer,applicant']],function(){
+    
+    //routes for residence
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/rent', 'HousingController@index');
+    Route::get('/editResidence/{id}', 'HousingController@edit');
+    Route::get('/showDetail/{id}', 'HousingController@show');
     
     //routes for application
     Route::get('/application','ApplicationController@index');
