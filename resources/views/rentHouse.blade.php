@@ -207,7 +207,7 @@
           <td><img src="{{ url('/data_file/'.$rs->Image) }}" class="product-img" alt="product img"></td>
           <td>{{$rs->MonthlyRental}}</td>
           <td><span class="btn btn-sm btn-outline-success btn-round btn-block">{{$rs->Availability}}</span></td>
-          <td style="text-align:center"><a href="/showDetail/{{ $rs->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/delete/{{ $rs->id }}" class="btn btn-danger waves-effect waves-light m-1 delRes"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
+          <td style="text-align:center"><a href="/showDetail/{{ $rs->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/delete/{{ $rs->id }}" class="btn btn-outline-danger btn-square waves-effect waves-light m-1 delRes"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
         </tr>  
         @endforeach
        </table>
@@ -231,7 +231,7 @@
           <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
           <td style="text-align:center">{{$rs->Availability}}</td>
           <td style="text-align:center">{{$rs->MonthlyRental}}</td>
-          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-outline-success btn-square waves-effect waves-light m-1">DETAIL</a></td>
+          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-outline-secondary btn-square waves-effect waves-light m-1"><i class="fa fa-search"></i>DETAIL</a></td>
         </tr>
         @endforeach
       </tbody>

@@ -138,7 +138,7 @@
         <tr>
           <td>{{$apk->id}}</td>
           <td><span class="btn btn-sm btn-outline-success btn-round btn-block" style="width:200px">{{$apk->status}}</span></td>
-          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-outline-success btn-square waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span> </td>
+          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-outline-primary btn-square waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span> </td>
         </tr>
         @endforeach
       </tbody>
@@ -179,7 +179,7 @@
           <tr>
            <td>{{$apk->id}}</td>
            <td>{{$apk->applicationDate}}</td>
-           <td style="text-align:center"><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
+           <td style="text-align:center"><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/deleteApk/{{ $apk->id }}" class="btn btn-outline-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
          </tr>  
          @endforeach
         </table>
