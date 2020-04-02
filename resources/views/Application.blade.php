@@ -110,6 +110,7 @@
             </div>
         </div>
     </div>
+    @if(auth()->user()->roles=='applicant')
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -122,12 +123,34 @@
         @foreach($application as $apk)
         <tr>
           <td>{{$apk->id}}</td>
-          <td>{{$apk->status}}</td>
+          <td style="text-align:center">{{$apk->status}}</td>
           <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >DETAIL</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
         </tr>
         @endforeach
       </tbody>
     </table>
+    @endif
+
+    @if(auth()->user()->roles=='officer')
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th width="15%">Application ID</th>
+          <th style="text-align:center">Information Date</th>
+          <th style="width:183px; text-align:center">OPTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($application as $apk)
+        <tr>
+          <td>{{$apk->id}}</td>
+          <td style="text-align:center">{{$apk->applicationDate}}</td>
+          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >DETAIL</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+    @endif
   @include('sweetalert::alert')
   
   
