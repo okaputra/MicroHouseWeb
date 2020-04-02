@@ -28,8 +28,10 @@ Route::post('/register','AuthController@postRegister')->name('register')->middle
 //this route only when user login as Officer
 Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     
-    //routes for residence
+    //routes dashboard
     Route::get('/home', 'HomeController@index')->name('home');
+    
+    //routes for residence
     Route::get('/rent', 'HousingController@index');
     Route::post('/storeNewR', 'HousingController@store');
     Route::get('/delete/{id}', 'HousingController@destroy');
@@ -49,8 +51,10 @@ Route::group(['middleware' => ['auth','checkRole:officer']],function(){
 //this route only when user login as Applicant
 Route::group(['middleware' => ['auth','checkRole:applicant']],function(){
     
-    //routes for residence
+    //routes dashboard
     Route::get('/home', 'HomeController@index')->name('home');
+    
+    //routes for residence
     Route::get('/rent', 'HousingController@index');
     Route::get('/showDetail/{id}', 'HousingController@show');
     
