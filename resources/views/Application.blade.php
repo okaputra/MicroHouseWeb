@@ -137,8 +137,8 @@
         @foreach($application as $apk)
         <tr>
           <td>{{$apk->id}}</td>
-          <td style="text-align:center">{{$apk->status}}</td>
-          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success" >DETAIL</a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger delApk" >DELETE</a> </td>
+          <td><span class="btn btn-sm btn-outline-success btn-round btn-block" style="width:200px">{{$apk->status}}</span></td>
+          <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span> </td>
         </tr>
         @endforeach
       </tbody>
@@ -146,7 +146,7 @@
     @endif
 
     @if(auth()->user()->roles=='officer')
-    <table class="table table-bordered table-striped">
+    {{-- <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th width="15%">Application ID</th>
@@ -163,7 +163,30 @@
         </tr>
         @endforeach
       </tbody>
-    </table>
+    </table> --}}
+
+    <div class="card-header border-0">
+      <div class="table-responsive">
+       
+        <table class="table align-items-center table-flush">
+         <thead>
+          <tr>
+            <th>Application ID</th>
+            <th>Information Date</th>
+            <th style="text-align:center">OPTION</th>
+          </tr>
+          </thead>
+          @foreach ($application as $apk)
+          <tr>
+           <td>{{$apk->id}}</td>
+           <td>{{$apk->applicationDate}}</td>
+           <td style="text-align:center"><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
+         </tr>  
+         @endforeach
+        </table>
+      </div>
+     </div>
+     </div>
     @endif
   @include('sweetalert::alert')
   

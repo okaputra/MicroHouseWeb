@@ -170,7 +170,7 @@
     </div>
     </div>
     @if(auth()->user()->roles=='officer')
-    <table class="table table-bordered table-striped">
+    {{-- <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th width="1%" style="text-align:center">Preview</th>
@@ -187,7 +187,32 @@
         </tr>
         @endforeach
       </tbody>
-    </table>
+    </table> --}}
+    <br>
+     <div class="table-responsive">
+      
+       <table class="table align-items-center table-flush">
+        <thead>
+         <tr>
+           <th>Address</th>
+           <th>Photo</th>
+           <th>Monthly  Rental</th>
+           <th style="text-align:center">Availability</th>
+           <th style="text-align:center">OPTION</th>
+         </tr>
+         </thead>
+         @foreach ($residence as $rs)
+         <tr>
+          <td>{{$rs->Address}}</td>
+          <td><img src="{{ url('/data_file/'.$rs->Image) }}" class="product-img" alt="product img"></td>
+          <td>{{$rs->MonthlyRental}}</td>
+          <td><span class="btn btn-sm btn-outline-success btn-round btn-block">{{$rs->Availability}}</span></td>
+          <td style="text-align:center"><a href="/showDetail/{{ $rs->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/delete/{{ $rs->id }}" class="btn btn-danger waves-effect waves-light m-1 delRes"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
+        </tr>  
+        @endforeach
+       </table>
+     </div>
+    </div>
     @endif
 
     @if(auth()->user()->roles=='applicant')
