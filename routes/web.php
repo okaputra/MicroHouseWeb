@@ -29,7 +29,7 @@ Route::post('/register','AuthController@postRegister')->name('register')->middle
 Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     
     //routes dashboard
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/homeOfficer', 'adminController@index')->name('home');
     
     //routes for residence
     Route::get('/rent', 'HousingController@index');
@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth','checkRole:applicant']],function(){
     
     //routes dashboard
     Route::get('/home', 'HomeController@index')->name('home');
-    
+
     //routes for residence
     Route::get('/rent', 'HousingController@index');
     Route::get('/showDetail/{id}', 'HousingController@show');

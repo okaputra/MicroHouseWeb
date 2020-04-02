@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Admin CSS -->
-    <link rel="icon" href="officerAsset/assets/images/favicon.ico" type="image/x-icon">
     <!-- simplebar CSS-->
     <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
     <!-- Bootstrap core CSS-->
@@ -32,7 +31,7 @@
   </head>
   <body>
 
-  @if(auth()->user()->roles=='applicant')
+  
     <!-- navigation bar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class ="container">
@@ -118,7 +117,7 @@
   <br>
   <br>
 
-  
+  @if(auth()->user()->roles=='applicant')
   {{-- Advertise --}}
   <div class="row" style="margin:auto;margin-bottom:20px">
     <div class="col-sm-4">
@@ -185,16 +184,16 @@
       </div>
     </div>
   </div>
-  
+  @endif
   
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  @endif
+  
 
-  @if(auth()->user()->roles=='officer')
+  {{-- @if(auth()->user()->roles=='officer')
   <div id="wrapper">
  
     <!--Start sidebar-wrapper-->
@@ -261,28 +260,12 @@
           <div class="col-lg-12">
             <div class="card">
         <div class="card-header border-0">
-                  Recent Orders Table
-          <div class="card-action">
-           <div class="dropdown">
-           <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
-            <i class="icon-options"></i>
-           </a>
-              <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="javascript:void();">Action</a>
-              <a class="dropdown-item" href="javascript:void();">Another action</a>
-              <a class="dropdown-item" href="javascript:void();">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="javascript:void();">Separated link</a>
-             </div>
-            </div>
-                   </div>
-                  </div>
+                  Residence List
                  <div class="table-responsive">
-           
+                  @foreach ($dataRes as $rs)
                    <table class="table align-items-center table-flush">
                     <thead>
                      <tr>
-                       <th>Action</th>
                        <th>Product</th>
                        <th>Photo</th>
                        <th>Product ID</th>
@@ -292,13 +275,7 @@
                      </tr>
                      </thead>
                      <tr>
-                      <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check1"/>
-                          <label for="check1"></label>
-                        </div>
-                      </td>
-                      <td>Iphone 5</td>
+                      <td>s</td>
                       <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
                       <td>#9405822</td>
                       <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
@@ -307,92 +284,56 @@
                             <div class="progress-bar gradient-ohhappiness" role="progressbar" style="width: 100%"></div>
                          </div></td>
                      </tr>
+                   </table>
+                   @endforeach
+                 </div>
+            </div>
+          </div>
+        </div><!--End Row-->
   
+        <!--End Dashboard Content-->
+  
+      </div>
+      <!-- End container-fluid-->
+      
+      </div><!--End content-wrapper-->
+     <!--Start Back To Top Button-->
+      <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+      <!--End Back To Top Button-->
+     
+    </div><!--End wrapper-->
+
+
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+        <div class="card-header border-0">
+                  Residence List
+                 <div class="table-responsive">
+           
+                   <table class="table align-items-center table-flush">
+                    <thead>
                      <tr>
-                      <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check2"/>
-                          <label for="check2"></label>
-                        </div>
-                      </td>
-                      <td>Earphone GL</td>
-                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
-                      <td>#9405820</td>
-                      <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
-                      <td>$ 1500.00</td>
-                      <td><div class="progress shadow" style="height: 4px;">
-                            <div class="progress-bar gradient-scooter" role="progressbar" style="width: 80%"></div>
-                         </div></td>
+                       <th>Product</th>
+                       <th>Photo</th>
+                       <th>Product ID</th>
+                       <th>Status</th>
+                       <th>Amount</th>
+                       <th>Completion</th>
                      </tr>
-  
+                     </thead>
                      <tr>
-                      <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check3"/>
-                          <label for="check3"></label>
-                        </div>
-                      </td>
-                      <td>HD Hand Camera</td>
+                      <td>Iphone 5</td>
                       <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
-                      <td>#9405830</td>
-                      <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
-                      <td>$ 1400.00</td>
-                      <td><div class="progress shadow" style="height: 4px;">
-                            <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 60%"></div>
-                         </div></td>
-                     </tr>
-  
-                     <tr>
-                      <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check4"/>
-                          <label for="check4"></label>
-                        </div>
-                      </td>
-                      <td>Clasic Shoes</td>
-                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
-                      <td>#9405825</td>
+                      <td>#9405822</td>
                       <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
-                      <td>$ 1200.00</td>
+                      <td>$ 1250.00</td>
                       <td><div class="progress shadow" style="height: 4px;">
                             <div class="progress-bar gradient-ohhappiness" role="progressbar" style="width: 100%"></div>
                          </div></td>
-                     </tr>
-  
-                     <tr>
-                      <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check5"/>
-                          <label for="check5"></label>
-                        </div>
-                      </td>
-                      <td>Hand Watch</td>
-                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
-                      <td>#9405840</td>
-                      <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
-                      <td>$ 1800.00</td>
-                      <td><div class="progress shadow" style="height: 4px;">
-                            <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 75%"></div>
-                         </div></td>
-                     </tr>
-  
-                      <tr>
-                        <td>
-                         <div class="icheck-material-primary">
-                          <input type="checkbox" id="check6"/>
-                          <label for="check6"></label>
-                        </div>
-                      </td>
-                      <td>HD Hand Camera</td>
-                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
-                      <td>#9405830</td>
-                      <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
-                      <td>$ 1400.00</td>
-                      <td><div class="progress shadow" style="height: 4px;">
-                            <div class="progress-bar gradient-scooter" role="progressbar" style="width: 70%"></div>
-                         </div></td>
-                     </tr>
-  
+                     </tr>  
                    </table>
                  </div>
             </div>
@@ -433,6 +374,6 @@
 
 
 
-  @endif
+  @endif --}}
 </body>
 </html>

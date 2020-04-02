@@ -11,6 +11,20 @@
     <!-- MY FONTS -->
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- Admin CSS -->
+    <!-- simplebar CSS-->
+    <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+    <!-- Bootstrap core CSS-->
+    <link href="officerAsset/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- animate CSS-->
+    <link href="officerAsset/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+    <!-- Icons CSS-->
+    <link href="officerAsset/assets/css/icons.css" rel="stylesheet" type="text/css"/>
+    <!-- Sidebar CSS-->
+    <link href="officerAsset/assets/css/sidebar-menu.css" rel="stylesheet"/>
+    <!-- Custom Style-->
+    <link href="officerAsset/assets/css/app-style.css" rel="stylesheet"/>
     
 
      <!-- MY CSS -->
