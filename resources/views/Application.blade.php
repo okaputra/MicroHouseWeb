@@ -165,7 +165,6 @@
       </tbody>
     </table> --}}
 
-    <div class="card-header border-0">
       <div class="table-responsive">
        
         <table class="table align-items-center table-flush">
@@ -185,7 +184,6 @@
          @endforeach
         </table>
       </div>
-     </div>
      </div>
     @endif
   @include('sweetalert::alert')
