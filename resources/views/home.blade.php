@@ -8,7 +8,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- MY FONTS -->
+    <!-- Admin CSS -->
+    <link rel="icon" href="officerAsset/assets/images/favicon.ico" type="image/x-icon">
+    <!-- simplebar CSS-->
+    <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+    <!-- Bootstrap core CSS-->
+    <link href="officerAsset/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- animate CSS-->
+    <link href="officerAsset/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+    <!-- Icons CSS-->
+    <link href="officerAsset/assets/css/icons.css" rel="stylesheet" type="text/css"/>
+    <!-- Sidebar CSS-->
+    <link href="officerAsset/assets/css/sidebar-menu.css" rel="stylesheet"/>
+    <!-- Custom Style-->
+    <link href="officerAsset/assets/css/app-style.css" rel="stylesheet"/>
     
     
 
@@ -19,6 +32,7 @@
   </head>
   <body>
 
+  @if(auth()->user()->roles=='applicant')
     <!-- navigation bar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class ="container">
@@ -39,21 +53,21 @@
             <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
         </li> --}}
         <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
-            {{ Auth::user()->name }}
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
-                {{('Logout') }}
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
+                {{ Auth::user()->name }}
             </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                    {{('Logout') }}
+                </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
-    </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </div>
+        </li>
       
    
     </ul>
@@ -104,7 +118,7 @@
   <br>
   <br>
 
-  @if(auth()->user()->roles=='applicant')
+  
   {{-- Advertise --}}
   <div class="row" style="margin:auto;margin-bottom:20px">
     <div class="col-sm-4">
@@ -171,12 +185,254 @@
       </div>
     </div>
   </div>
+  
+  
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   @endif
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+  @if(auth()->user()->roles=='officer')
+  <div id="wrapper">
+ 
+    <!--Start sidebar-wrapper-->
+     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+       <div class="brand-logo">
+        <a href="index.html">
+         <h5 class="logo-text">--MICROhouse--</h5>
+       </a>
+     </div>
+     <ul class="sidebar-menu do-nicescrol">
+        <li class="sidebar-header">MAIN NAVIGATION</li>
+        <li>
+          <a href="index.html" class="waves-effect">
+            <i class="zmdi zmdi-view-dashboard"></i> <span>ADMIN PANEL</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <li><a href="/applicationAdminMenu"><i class="zmdi zmdi-star-outline"></i>Residence</a></li>
+          </ul>
+          <ul class="sidebar-submenu">
+            <li><a href="/applicationAdminMenu"><i class="zmdi zmdi-star-outline"></i>Application</a></li>
+          </ul>
+        </li>
+     </div>
+     <!--End sidebar-wrapper-->
+  
+  <!--Start topbar header-->
+  <header class="topbar-nav">
+   <nav class="navbar navbar-expand fixed-top bg-white">
+    <ul class="navbar-nav mr-auto align-items-center">
+      <li class="nav-item">
+        <a class="nav-link toggle-menu" href="javascript:void();">
+         <i class="icon-menu menu-icon"></i>
+       </a>
+      </li>
+    </ul>
+       
+    <ul class="navbar-nav align-items-center right-nav-link">
+      <li class="nav-item dropdown">
+        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
+            {{ Auth::user()->name }}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+                {{('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </div>
+    </li>
+    </ul>
+  </nav>
+  </header>
+  <!--End topbar header-->
+  
+  <div class="clearfix"></div>
+    
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+        <div class="card-header border-0">
+                  Recent Orders Table
+          <div class="card-action">
+           <div class="dropdown">
+           <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+            <i class="icon-options"></i>
+           </a>
+              <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="javascript:void();">Action</a>
+              <a class="dropdown-item" href="javascript:void();">Another action</a>
+              <a class="dropdown-item" href="javascript:void();">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="javascript:void();">Separated link</a>
+             </div>
+            </div>
+                   </div>
+                  </div>
+                 <div class="table-responsive">
+           
+                   <table class="table align-items-center table-flush">
+                    <thead>
+                     <tr>
+                       <th>Action</th>
+                       <th>Product</th>
+                       <th>Photo</th>
+                       <th>Product ID</th>
+                       <th>Status</th>
+                       <th>Amount</th>
+                       <th>Completion</th>
+                     </tr>
+                     </thead>
+                     <tr>
+                      <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check1"/>
+                          <label for="check1"></label>
+                        </div>
+                      </td>
+                      <td>Iphone 5</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405822</td>
+                      <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
+                      <td>$ 1250.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-ohhappiness" role="progressbar" style="width: 100%"></div>
+                         </div></td>
+                     </tr>
+  
+                     <tr>
+                      <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check2"/>
+                          <label for="check2"></label>
+                        </div>
+                      </td>
+                      <td>Earphone GL</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405820</td>
+                      <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
+                      <td>$ 1500.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-scooter" role="progressbar" style="width: 80%"></div>
+                         </div></td>
+                     </tr>
+  
+                     <tr>
+                      <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check3"/>
+                          <label for="check3"></label>
+                        </div>
+                      </td>
+                      <td>HD Hand Camera</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405830</td>
+                      <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
+                      <td>$ 1400.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 60%"></div>
+                         </div></td>
+                     </tr>
+  
+                     <tr>
+                      <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check4"/>
+                          <label for="check4"></label>
+                        </div>
+                      </td>
+                      <td>Clasic Shoes</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405825</td>
+                      <td><span class="btn btn-sm btn-outline-success btn-round btn-block">Paid</span></td>
+                      <td>$ 1200.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-ohhappiness" role="progressbar" style="width: 100%"></div>
+                         </div></td>
+                     </tr>
+  
+                     <tr>
+                      <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check5"/>
+                          <label for="check5"></label>
+                        </div>
+                      </td>
+                      <td>Hand Watch</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405840</td>
+                      <td><span class="btn btn-sm btn-outline-danger btn-round btn-block">Failed</span></td>
+                      <td>$ 1800.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 75%"></div>
+                         </div></td>
+                     </tr>
+  
+                      <tr>
+                        <td>
+                         <div class="icheck-material-primary">
+                          <input type="checkbox" id="check6"/>
+                          <label for="check6"></label>
+                        </div>
+                      </td>
+                      <td>HD Hand Camera</td>
+                      <td><img src="https://via.placeholder.com/1000x993" class="product-img" alt="product img"></td>
+                      <td>#9405830</td>
+                      <td><span class="btn btn-sm btn-outline-info btn-round btn-block">Pending</span></td>
+                      <td>$ 1400.00</td>
+                      <td><div class="progress shadow" style="height: 4px;">
+                            <div class="progress-bar gradient-scooter" role="progressbar" style="width: 70%"></div>
+                         </div></td>
+                     </tr>
+  
+                   </table>
+                 </div>
+            </div>
+          </div>
+        </div><!--End Row-->
+  
+        <!--End Dashboard Content-->
+  
+      </div>
+      <!-- End container-fluid-->
+      
+      </div><!--End content-wrapper-->
+     <!--Start Back To Top Button-->
+      <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+      <!--End Back To Top Button-->
+     
+    </div><!--End wrapper-->
+  
+    <!-- Bootstrap core JavaScript-->
+    <script src="officerAsset/assets/js/jquery.min.js"></script>
+    <script src="officerAsset/assets/js/popper.min.js"></script>
+    <script src="officerAsset/assets/js/bootstrap.min.js"></script>
+    
+    <!-- simplebar js -->
+    <script src="officerAsset/assets/plugins/simplebar/js/simplebar.js"></script>
+    <!-- waves effect js -->
+    <script src="officerAsset/assets/js/waves.js"></script>
+    <!-- sidebar-menu js -->
+    <script src="officerAsset/assets/js/sidebar-menu.js"></script>
+    <!-- Custom scripts -->
+    <script src="officerAsset/assets/js/app-script.js"></script>
+    <!-- Chart js -->
+    <script src="officerAsset/assets/plugins/Chart.js/Chart.min.js"></script>
+    <!--Peity Chart -->
+    <script src="officerAsset/assets/plugins/peity/jquery.peity.min.js"></script>
+    <!-- Index js -->
+    <script src="officerAsset/assets/js/index.js"></script>
+
+
+
+  @endif
+</body>
 </html>
