@@ -74,7 +74,22 @@
   </div>
 </nav>
 <!-- end of navbar -->
+@if(auth()->user()->roles=='officer')
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">WELCOME BACK! OFFICER</h1>
+    <p class="lead" style="text-align:center;color:white">What do you want today? i hope u have a nice day!</p>
+    <p class="lead" style="text-align:center">
+      <a class="btn btn-primary btn-lg" href="/rent" role="button">View Residence</a>
+      <a class="btn btn-info btn-lg" href="/application" role="button">View Application</a>
+    </p>
+  </div>
+</div>
+@endif
 
+
+
+  @if(auth()->user()->roles=='applicant')
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -113,6 +128,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  @endif
 
   <br>
   <br>

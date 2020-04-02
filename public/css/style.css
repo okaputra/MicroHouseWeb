@@ -10,9 +10,9 @@
 
 /* JUMBOTRON */
 .jumbotron{
-	background-image: url("{{asset('images/img1.jpg')}}");
+	background-image: url('/images/aa.jpg');
 	background-size: cover;
-	height: 800px;
+	height: 750px;
 	
 }
 .jumbotron .display-4{
