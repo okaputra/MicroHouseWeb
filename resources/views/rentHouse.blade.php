@@ -221,6 +221,7 @@
         <tr>
           <th width="1%" style="text-align:center">Preview</th>
           <th style="text-align:center">Information Status</th>
+          <th style="text-align:center">Monthly Rental</th>
           <th style="width:145px;text-align:center">OPTION</th>
         </tr>
       </thead>
@@ -228,8 +229,9 @@
         @foreach($residence as $rs)
         <tr>
           <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
-          <td>{{$rs->Availability}}</td>
-          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-success" >DETAIL</a></td>
+          <td style="text-align:center">{{$rs->Availability}}</td>
+          <td style="text-align:center">{{$rs->MonthlyRental}}</td>
+          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-outline-success btn-square waves-effect waves-light m-1">DETAIL</a></td>
         </tr>
         @endforeach
       </tbody>
