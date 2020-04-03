@@ -43,7 +43,7 @@
           @endif
           
           <div class="form-group">
-            <label class="control-label">Month Salary</label>
+            <label class="control-label">Month Income</label>
             <input class="form-control {{ $errors->has('monthSalary') ? 'is-invalid': ' ' }}" type="text" placeholder="Month Salary" value="{{ old('monthSalary') }}" name="monthSalary" required>
           </div>
           @if($errors->has('monthSalary'))

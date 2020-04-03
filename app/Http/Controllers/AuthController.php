@@ -34,7 +34,7 @@ class AuthController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
-            'monthSalary'=>$request->monthSalary
+            'monthly_income'=>$request->monthSalary
         ]);
         
         auth()->loginUsingId($user->id);
