@@ -41,6 +41,7 @@ class ApplicationController extends Controller
             'requiredMonth'=>$request->requiredMonth,
             'requiredYear'=>$request->requiredYear,
             'status'=>$request->status,
+            'residenceID'=>$request->idres,
         ]);
         return redirect('/application')->with('success','Application Submited Successfully');
     }

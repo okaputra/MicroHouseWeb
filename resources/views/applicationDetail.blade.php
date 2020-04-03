@@ -111,6 +111,11 @@
               </tr>
               <tr>
                 <th scope="row">4</th>
+                <td>Residence ID</td>
+                <td>{{$detailApk->residenceID}}</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
                 <td>Status</td>
                 <td>{{$detailApk->status}}</td>
               </tr>

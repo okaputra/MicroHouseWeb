@@ -82,7 +82,7 @@
             <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
           @endif
           @if(auth()->user()->roles=='applicant')
-            <a href="/submitApplication" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
+          <a href="/submitApplication/{{$data->id}}" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
               Submit Application
             </a>
           @endif
@@ -177,6 +177,9 @@
                         <div class="form-group">
                           <label for="status">Status</label>
                           <input type="text" class="form-control" id="stts" name="status" required>
+                        </div>
+                        <div class="form-group">
+                        <input type="hidden" class="form-control" id="idRes" name="idres" value="{{$data->id}}">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
