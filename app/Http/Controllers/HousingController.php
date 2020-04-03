@@ -47,6 +47,7 @@ class HousingController extends Controller
         $file->move($fileDestination,$file_name);
 
         DB::table('residence')->insert([
+            'HouseName'=>$request->hsName,
             'Address'=>$request->adr,
             'NumberOfUnit'=>$request->nou,
             'SizeUnit'=>$request->spu,
@@ -103,6 +104,7 @@ class HousingController extends Controller
         $file->move($fileDestination,$file_name);
 
         DB::table('residence')->where('id',$request->id)->update([
+            'HouseName'=>$request->hsNamee,
             'Address'=>$request->adrr,
             'NumberOfUnit'=>$request->nouu,
             'SizeUnit'=>$request->spuu,

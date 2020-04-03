@@ -97,51 +97,56 @@
             <tbody>
               <tr>
                 <th scope="row">1</th>
+                <td>House Name</td>
+                <td>{{$data->HouseName}}</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
                 <td>Availability</td>
                 <td>{{$data->Availability}}</td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                <th scope="row">3</th>
                 <td>Address</td>
                 <td>{{$data->Address}}</td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row">4</th>
                 <td>Number of Unit</td>
                 <td>{{$data->NumberOfUnit}}</td>
               </tr>
               <tr>
-                <th scope="row">4</th>
+                <th scope="row">5</th>
                 <td>Unit Size</td>
                 <td>{{$data->SizeUnit}}</td>
               </tr>
               <tr>
-                <th scope="row">5</th>
+                <th scope="row">6</th>
                 <td>Monthly Rental</td>
                 <td>{{$data->MonthlyRental}}</td>
               </tr>
               <tr>
-                <th scope="row">6</th>
+                <th scope="row">7</th>
                 <td>Bedroom</td>
                 <td>{{$data->Bedroom}}</td>
               </tr>
               <tr>
-                <th scope="row">7</th>
+                <th scope="row">8</th>
                 <td>Bathroom</td>
                 <td>{{$data->Bathroom}}</td>
               </tr>
               <tr>
-                <th scope="row">8</th>
+                <th scope="row">9</th>
                 <td>Living Room</td>
                 <td>{{$data->livingRoom}}</td>
               </tr>
               <tr>
-                <th scope="row">9</th>
+                <th scope="row">10</th>
                 <td>Garage</td>
                 <td>{{$data->Garage}}</td>
               </tr>
               <tr>
-                <th scope="row">10</th>
+                <th scope="row">11</th>
                 <td>Pool</td>
                 <td>{{$data->Pool}}</td>
               </tr>

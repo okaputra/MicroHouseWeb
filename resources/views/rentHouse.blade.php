@@ -112,6 +112,10 @@
           <form action="/storeNewR" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
               <div class="form-group">
+                <label for="houseName">House Name</label>
+                <input type="houseName" class="form-control" id="hsname" name="hsName" required>
+              </div>
+              <div class="form-group">
                 <label for="address">Address</label>
                 <input type="address" class="form-control" id="address" name="adr" required>
               </div>
@@ -194,6 +198,7 @@
        <table class="table align-items-center table-flush">
         <thead>
          <tr>
+           <th>House Name</th>
            <th>Address</th>
            <th>Photo</th>
            <th>Monthly  Rental</th>
@@ -203,6 +208,7 @@
          </thead>
          @foreach ($residence as $rs)
          <tr>
+          <td>{{$rs->HouseName}}</td>
           <td>{{$rs->Address}}</td>
           <td><img src="{{ url('/data_file/'.$rs->Image) }}" class="product-img" alt="product img"></td>
           <td>{{$rs->MonthlyRental}}</td>

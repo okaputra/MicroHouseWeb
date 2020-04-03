@@ -82,8 +82,12 @@
                 <form action="/updateResidence" method="POST" style="width:100%"  enctype="multipart/form-data">
                     {{ csrf_field() }}
                       <div class="form-group">
-                        <label for="address">Address</label>
+                        <label for="HouseName">House Name</label>
                         <input type="hidden" class="form-control" id="address" value="{{$rs->id}}" name="id">
+                        <input type="housename" class="form-control" id="hsname" value="{{$rs->HouseName}}" name="hsNamee">
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Address</label>
                         <input type="address" class="form-control" id="address" value="{{$rs->Address}}" name="adrr">
                       </div>
                       <div class="form-group">
