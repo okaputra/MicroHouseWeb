@@ -83,7 +83,7 @@
           {{-- show when user login as officer --}}
           @if(auth()->user()->roles=='officer')
             <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
-            <a href="#" style="margin-left:5px" class="btn btn-danger my-3">Ignore</a>
+            <a href="#" style="margin-left:5px" class="btn btn-danger my-3">REJECT</a>
           @endif
           <table class="table table-striped">
             <thead>

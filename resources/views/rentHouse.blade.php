@@ -198,6 +198,7 @@
        <table class="table align-items-center table-flush">
         <thead>
          <tr>
+           <th>Residence ID</th>
            <th>House Name</th>
            <th>Address</th>
            <th>Photo</th>
@@ -208,6 +209,7 @@
          </thead>
          @foreach ($residence as $rs)
          <tr>
+          <td>{{$rs->id}}</td>
           <td>{{$rs->HouseName}}</td>
           <td>{{$rs->Address}}</td>
           <td><img src="{{ url('/data_file/'.$rs->Image) }}" class="product-img" alt="product img"></td>
