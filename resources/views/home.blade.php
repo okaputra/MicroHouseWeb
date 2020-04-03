@@ -131,9 +131,9 @@
   @endif
 
   <br>
-  <br>
-
   @if(auth()->user()->roles=='applicant')
+  <h1 style="text-align:center"><strong>ADVERTISEMENT</strong></h1>
+  <br>
   {{-- Advertise --}}
   <div class="row" style="margin:auto;margin-bottom:20px">
     <div class="col-sm-4">
