@@ -1,77 +1,5 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Admin CSS -->
-    <!-- simplebar CSS-->
-    <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
-    <!-- Bootstrap core CSS-->
-    <link href="officerAsset/assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <!-- animate CSS-->
-    <link href="officerAsset/assets/css/animate.css" rel="stylesheet" type="text/css"/>
-    <!-- Icons CSS-->
-    <link href="officerAsset/assets/css/icons.css" rel="stylesheet" type="text/css"/>
-    <!-- Sidebar CSS-->
-    <link href="officerAsset/assets/css/sidebar-menu.css" rel="stylesheet"/>
-    <!-- Custom Style-->
-    <link href="officerAsset/assets/css/app-style.css" rel="stylesheet"/>
-    
-
-     <!-- MY CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <title>MicroHouse|Dashboard</title>
-  </head>
-  <body>
-
-    <!-- navigation bar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class ="container">
-  <a class="navbar-brand" href="/home">MicroHouse</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/rent">Residence</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/application">Applicantion</a>
-        </li>
-        {{-- <li class="nav-item">
-            <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
-        </li> --}}
-        <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
-            {{ Auth::user()->name }}
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
-                {{('Logout') }}
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
-    </li>
-      
-   
-    </ul>
-  </div>
-  </div>
-</nav>
-<!-- end of navbar -->
+@extends('layouts.header')
+@section('konten')
 
 <div class="container">
     <div class="row" style="margin-top:109px">
@@ -82,7 +10,7 @@
 
           {{-- show when user login as officer --}}
           @if(auth()->user()->roles=='officer')
-            <a href="#" style="margin-left:5px" class="btn btn-warning my-3">Allocate</a>
+            <a href="/submitAllocate/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModalAllocateScrollable">Allocate</a>
             <a href="#" style="margin-left:5px" class="btn btn-danger my-3">REJECT</a>
           @endif
           <table class="table table-striped">
@@ -121,6 +49,38 @@
               </tr>
             </tbody>
           </table>
+          <div class="modal fade" id="exampleModalAllocateScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">Allocation Detail</h5>
+                </div>
+                <div class="modal-body">
+                  <form action="/submitAllocate" method="POST">
+                    {{ csrf_field() }}
+                        <div class="form-group">
+                          <label for="AloDate">Start From</label>
+                          <input type="date" class="form-control" id="aloDate" name="allocationDate" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="endDate">Until</label>
+                          <input type="date" class="form-control" id="endDate" name="endDateAlo" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="duration">Duration</label>
+                          <input type="text" class="form-control" id="duration" name="Duration" required>
+                        </div>
+                        <div class="form-group">
+                        <input type="hidden" class="form-control" id="unitID" name="UnitID" value="{{$detailApk->residenceID}}">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>    
+            </div>
+        </div>
     </div>
   </div>
   @include('sweetalert::alert')
@@ -131,5 +91,4 @@
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection

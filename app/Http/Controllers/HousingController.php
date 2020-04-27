@@ -131,4 +131,14 @@ class HousingController extends Controller
         DB::table('residence')->where('id',$id)->delete();
         return redirect('/rent')->with('success','Data Deleted Successfully');
     }
+
+    public function allocate(Request $request){
+        DB::table('allocation')->insert([
+            'date_from'=>$request->allocationDate,
+            'date_end'=>$request->endDateAlo,
+            'duration'=>$request->Duration,
+            'unit_id'=>$request->UnitID
+        ]);
+        return redirect('/application')->with('success','Allocation Successfully');
+    }
 }

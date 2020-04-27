@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth','checkRole:officer']],function(){
     Route::get('/editResidence/{id}', 'HousingController@edit');
     Route::get('/showDetail/{id}', 'HousingController@show');
     Route::post('/updateResidence', 'HousingController@update');
+    Route::post('/submitAllocate', 'HousingController@allocate');
     
     //routes for application
     Route::get('/application','ApplicationController@index');

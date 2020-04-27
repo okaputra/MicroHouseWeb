@@ -1,157 +1,88 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <!-- Admin CSS -->
-    <!-- simplebar CSS-->
-    <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
-    <!-- Bootstrap core CSS-->
-    <link href="officerAsset/assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <!-- animate CSS-->
-    <link href="officerAsset/assets/css/animate.css" rel="stylesheet" type="text/css"/>
-    <!-- Icons CSS-->
-    <link href="officerAsset/assets/css/icons.css" rel="stylesheet" type="text/css"/>
-    <!-- Sidebar CSS-->
-    <link href="officerAsset/assets/css/sidebar-menu.css" rel="stylesheet"/>
-    <!-- Custom Style-->
-    <link href="officerAsset/assets/css/app-style.css" rel="stylesheet"/>
-    
-
-     <!-- MY CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <title>MicroHouse|Dashboard</title>
-  </head>
-  <body>
-
-    <!-- navigation bar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class ="container">
-  <a class="navbar-brand" href="/home">MicroHouse</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/rent">Residence</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" id="navlink" href="/application">Applicantion</a>
-        </li>
-        {{-- <li class="nav-item">
-            <a class="nav-link" id="navlink" href="applicanttable.php">Applicant</a>
-        </li> --}}
-        <li class="nav-item dropdown">
-        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-left:597px">
-            {{ Auth::user()->name }}
-        </a>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
-                {{('Logout') }}
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </div>
-    </li>
-      
-   
-    </ul>
-  </div>
-  </div>
-</nav>
-<!-- end of navbar -->
+@extends('layouts.header')
+@section('konten')
 
 <div class="container">
     <div class="row" style="margin-top:109px">
-        <div class="card" style="width: 100%;">
+        <div class="card" style="width: 50%;">
             <img src="{{ url('/data_file/'.$data->Image) }}" class="card-img-top" alt="">
           </div>
-          @if(auth()->user()->roles=='officer')
-            <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
-          @endif
-          @if(auth()->user()->roles=='applicant')
-          <a href="/submitApplication/{{$data->id}}" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
+          <div style="margin-left:44px">
+            <h5 class="btn btn-outline-secondary btn-square waves-effect waves-light m-1">{{$data->Availability}}</h5><br>
+            <h1>{{$data->HouseName}}</h1> <br>
+            <h3 style="color:red">{{$data->MonthlyRental}}<span style="color:black">/month</span></h3>  <br>
+            <hr style="margin-top:10px;margin-bottom:10px; width:526px">
+            @if(auth()->user()->roles=='applicant')
+            <a href="/submitApplication/{{$data->id}}" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModalApplicationScrollable" style="margin-right:20px">
               Submit Application
             </a>
-          @endif
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">List</th>
-                <th scope="col">Desciption</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>House Name</td>
-                <td>{{$data->HouseName}}</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Availability</td>
-                <td>{{$data->Availability}}</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Address</td>
-                <td>{{$data->Address}}</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Number of Unit</td>
-                <td>{{$data->NumberOfUnit}}</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Unit Size</td>
-                <td>{{$data->SizeUnit}}</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Monthly Rental</td>
-                <td>{{$data->MonthlyRental}}</td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>Bedroom</td>
-                <td>{{$data->Bedroom}}</td>
-              </tr>
-              <tr>
-                <th scope="row">8</th>
-                <td>Bathroom</td>
-                <td>{{$data->Bathroom}}</td>
-              </tr>
-              <tr>
-                <th scope="row">9</th>
-                <td>Living Room</td>
-                <td>{{$data->livingRoom}}</td>
-              </tr>
-              <tr>
-                <th scope="row">10</th>
-                <td>Garage</td>
-                <td>{{$data->Garage}}</td>
-              </tr>
-              <tr>
-                <th scope="row">11</th>
-                <td>Pool</td>
-                <td>{{$data->Pool}}</td>
-              </tr>
-            </tbody>
-          </table>
+            @endif
+            @if(auth()->user()->roles=='officer')
+              <a href="/editResidence/{{$data->id}}" class="btn btn-success my-3">Edit Residence Detail</a>
+            @endif
+
+          </div>
+          {{-- <div style="margin-top:26px;"> --}}
+            <div style="margin-top:31px">
+              <h1>DESCRIPTION</h1>
+              <table class="table table-borderless" style="margin-right:264px">
+                <thead>
+                  <tr>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>House Name  :</td>
+                    <td> <b><i>{{$data->HouseName}}</i></b> </td>
+                  </tr>
+                  <tr>
+                    <td>Address  :</td>
+                    <td><b><i>{{$data->Address}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Number of Unit  :</td>
+                    <td><b><i>{{$data->NumberOfUnit}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Unit Size  :</td>
+                    <td><b><i>{{$data->SizeUnit}}</i></b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div>
+              <table class="table table-borderless" style="margin-top:81px;margin-right:276px; border-left:1px solid grey;">
+                <thead>
+                  <tr>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Bedroom  :</td>
+                    <td><b><i>{{$data->Bedroom}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Bathroom  :</td>
+                    <td><b><i>{{$data->Bathroom}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Living Room  :</td>
+                    <td><b><i>{{$data->livingRoom}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Garage  :</td>
+                    <td><b><i>{{$data->Garage}}</i></b></td>
+                  </tr>
+                  <tr>
+                    <td>Pool  :</td>
+                    <td><b><i>{{$data->Pool}}</i></b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
           <!-- Modal -->
           <div class="modal fade" id="exampleModalApplicationScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -175,8 +106,7 @@
                           <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
                         </div>
                         <div class="form-group">
-                          <label for="status">Status</label>
-                          <input type="text" class="form-control" id="stts" name="status" required>
+                          <input type="hidden" class="form-control" id="stts" name="status" value="waiting">
                         </div>
                         <div class="form-group">
                         <input type="hidden" class="form-control" id="idRes" name="idres" value="{{$data->id}}">
@@ -199,5 +129,4 @@
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+@endsection
