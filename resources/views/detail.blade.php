@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row" style="margin-top:109px">
-        <div class="card" style="width: 50%;">
+        <div class="card" style="width: 50%; border:none">
             <img src="{{ url('/data_file/'.$data->Image) }}" class="card-img-top" alt="">
           </div>
           <div style="margin-left:44px">
@@ -41,7 +41,7 @@
                   </tr>
                   <tr>
                     <td>Number of Unit  :</td>
-                    <td><b><i>{{$data->NumberOfUnit}}</i></b></td>
+                    <td><b><i>{{$data->UnitNumber}}</i></b></td>
                   </tr>
                   <tr>
                     <td>Unit Size  :</td>

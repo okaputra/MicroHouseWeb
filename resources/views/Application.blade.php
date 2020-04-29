@@ -50,12 +50,14 @@
           </tr>
           </thead>
           @foreach ($application as $apk)
+          @if(auth()->user()->id==$apk->user_id)
           <tr>
            <td>{{$apk->id}}</td>
            <td>{{$apk->applicationDate}}</td>
            <td style="text-align:center"><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/deleteApk/{{ $apk->id }}" class="btn btn-outline-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
            <td style="text-align:center">{{$apk->status}}</td>
-          </tr>  
+          </tr>
+          @endif
          @endforeach
         </table>
       </div>

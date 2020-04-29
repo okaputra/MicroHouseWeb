@@ -49,7 +49,7 @@ class HousingController extends Controller
         DB::table('residence')->insert([
             'HouseName'=>$request->hsName,
             'Address'=>$request->adr,
-            'NumberOfUnit'=>$request->nou,
+            'UnitNumber'=>$request->nou,
             'SizeUnit'=>$request->spu,
             'MonthlyRental'=>$request->mRn,
             'Availability'=>$request->ava,
@@ -106,7 +106,7 @@ class HousingController extends Controller
         DB::table('residence')->where('id',$request->id)->update([
             'HouseName'=>$request->hsNamee,
             'Address'=>$request->adrr,
-            'NumberOfUnit'=>$request->nouu,
+            'UnitNumber'=>$request->nouu,
             'SizeUnit'=>$request->spuu,
             'MonthlyRental'=>$request->mRnn,
             'Availability'=>$request->avaa,

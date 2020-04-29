@@ -121,7 +121,7 @@
     @endif
 
     @if(auth()->user()->roles=='applicant')
-    <table class="table table-bordered table-striped">
+    {{-- <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th width="1%" style="text-align:center">Preview</th>
@@ -140,8 +140,49 @@
         </tr>
         @endforeach
       </tbody>
-    </table>
-    @endif
+    </table> --}}
+
+    @foreach($residence as $rs)
+    <div class="hotel-item">
+      <div class="item-media">
+          <div class="image-cover">
+              <img src="{{ url('/data_file/'.$rs->Image) }}" alt="">
+          </div>
+      </div>
+      <div class="item-body">
+          <div class="item-title">
+              <h2>
+                  <a href="hotel-detail.html">{{$rs->HouseName}}</a>
+              </h2>
+          </div>
+          <div class="item-hotel-star">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+          </div>
+          <div class="item-address">
+            <img style="height:19px" src="{{url('images/mrk.png')}}" alt="">
+              {{$rs->Address}}
+          </div>
+          <div class="item-footer">
+            <div class="item-rate">
+              <span>{{$rs->Availability}}</span>
+            </div>
+          </div>
+      </div>
+      <div class="item-price-more">
+          <div class="price">
+              per month
+              <span class="amount">{{$rs->MonthlyRental}}</span>
+          </div>
+          <a href="/showDetail/{{ $rs->id }}" class="awe-btn">DETAIL INFO</a>
+      </div>
+  </div>
+  @endforeach
+  <!-- END / ITEM -->
+  @endif
 
     <br>
   </div>

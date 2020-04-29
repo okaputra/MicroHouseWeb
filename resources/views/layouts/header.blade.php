@@ -10,9 +10,20 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/awe-booking-font.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
     <!-- MY FONTS -->
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" type="text/css" href="css/stylego.css">
+    <link rel="stylesheet" type="text/css" href="css/demogo.css">
 
     <!-- Admin CSS -->
     <!-- simplebar CSS-->

@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
               <label for="NumUnit">Number of Unit</label>
-              <input type="NumUnit" class="form-control" id="NumUnit" value="{{$rs->NumberOfUnit}}" name="nouu">
+              <input type="NumUnit" class="form-control" id="NumUnit" value="{{$rs->UnitNumber}}" name="nouu">
             </div>
             <div class="form-group">
               <label for="SizePerUnit">Size per Unit</label>
