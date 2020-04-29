@@ -11,7 +11,7 @@
           {{-- show when user login as officer --}}
           @if(auth()->user()->roles=='officer')
             <a href="/submitAllocate/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModalAllocateScrollable">Allocate</a>
-            <a href="/reject/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-danger my-3 reject">REJECT</a>
+            <a href="/reject/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-danger my-3 reject" data-toggle="modal" data-target="#exampleModalRejectScrollable">REJECT</a>
           @endif
           <table class="table table-striped">
             <thead>
@@ -54,6 +54,38 @@
               </tr>
             </tbody>
           </table>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalRejectScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">REJECT APPLICATION</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="/reject" method="POST">
+                    {{ csrf_field() }}
+                        <div class="form-group">
+                          <label for="AloDate">Are You Sure to reject?</label>
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" class="form-control" id="id" name="id" value="{{$detailApk->id}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" class="form-control" id="statusReject" name="statusReject" value="Rejected">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                          <button type="submit" id="approve" class="btn btn-primary">Reject</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="modal fade" id="exampleModalAllocateScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
               <div class="modal-content">
@@ -93,33 +125,6 @@
   </div>
   @include('sweetalert::alert')
 
-  <script>
-    $('.reject').on('click',function(e){
-      e.preventDefault();
-      const rejectButton = $(this).attr('href');
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "This Application will be Rejected!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#09bf25',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Reject!'
-        }).then((result) => {
-        if (result.value) {
-          document.location.href = rejectButton;
-        }else{
-          Swal.fire({
-          title: 'Canceled!',
-          icon: 'error',
-          timer: 1300,
-          showConfirmButton: false, 
-          })
-        }
-      })
-    });
-
-  </script>
 
 
   <!-- Optional JavaScript -->

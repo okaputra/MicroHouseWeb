@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    @if(auth()->user()->roles=='applicant')
+    @if(auth()->user()->roles=='officer')
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
@@ -29,7 +29,7 @@
         @foreach($application as $apk)
         <tr>
           <td>{{$apk->id}}</td>
-          <td><span class="btn btn-sm btn-outline-success btn-round btn-block" style="width:200px">{{$apk->status}}</span></td>
+          <td style="text-align:center">{{$apk->status}}</td>
           <td><a href="/apkDetail/{{ $apk->id }}" class="btn btn-outline-primary btn-square waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a> <a href="/deleteApk/{{ $apk->id }}" class="btn btn-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span> </td>
         </tr>
         @endforeach
@@ -37,7 +37,7 @@
     </table>
     @endif
 
-    @if(auth()->user()->roles=='officer')
+    @if(auth()->user()->roles=='applicant')
       <div class="table-responsive">
        
         <table class="table align-items-center table-flush">
@@ -54,7 +54,7 @@
            <td>{{$apk->id}}</td>
            <td>{{$apk->applicationDate}}</td>
            <td style="text-align:center"><a href="/apkDetail/{{ $apk->id }}" class="btn btn-success waves-effect waves-light m-1"> <i class="fa fa-search"></i> <span>DETAIL</span> </a><a href="/deleteApk/{{ $apk->id }}" class="btn btn-outline-danger waves-effect waves-light m-1 delApk"> <i class="fa fa fa-trash-o"></i> <span>DELETE</span></a></td>
-           <td>{{$apk->status}}</td>
+           <td style="text-align:center">{{$apk->status}}</td>
           </tr>  
          @endforeach
         </table>

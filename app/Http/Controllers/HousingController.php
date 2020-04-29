@@ -144,4 +144,11 @@ class HousingController extends Controller
         ]);
         return redirect('/application')->with('success','Allocation Successfully');
     }
+    
+    public function reject(Request $request){
+        DB::table('table_application')->where('id',$request->id)->update([
+            'status'=>$request->statusReject,
+        ]);
+        return redirect('/application')->with('success','Rejected Successfully');
+    }
 }
