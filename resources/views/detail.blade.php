@@ -106,10 +106,13 @@
                           <input type="text" class="form-control" id="RqYear" name="requiredYear" required>
                         </div>
                         <div class="form-group">
-                          <input type="hidden" class="form-control" id="stts" name="status" value="waiting">
+                          <input type="hidden" class="form-control" id="stts" name="status" value="Waiting">
                         </div>
                         <div class="form-group">
-                        <input type="hidden" class="form-control" id="idRes" name="idres" value="{{$data->id}}">
+                          <input type="hidden" class="form-control" id="idRes" name="idres" value="{{$data->id}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" class="form-control" id="usrID" name="idUser" value="{{auth()->user()->id}}">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

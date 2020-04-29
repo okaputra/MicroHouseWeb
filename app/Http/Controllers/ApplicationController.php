@@ -37,6 +37,7 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         DB::table('table_application')->insert([
+            'user_id'=>$request->idUser,
             'applicationDate'=>$request->applicationDate,
             'requiredMonth'=>$request->requiredMonth,
             'requiredYear'=>$request->requiredYear,

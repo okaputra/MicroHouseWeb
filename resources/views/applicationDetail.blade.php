@@ -11,7 +11,7 @@
           {{-- show when user login as officer --}}
           @if(auth()->user()->roles=='officer')
             <a href="/submitAllocate/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModalAllocateScrollable">Allocate</a>
-            <a href="#" style="margin-left:5px" class="btn btn-danger my-3">REJECT</a>
+            <a href="/reject/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-danger my-3 reject">REJECT</a>
           @endif
           <table class="table table-striped">
             <thead>
@@ -44,6 +44,11 @@
               </tr>
               <tr>
                 <th scope="row">5</th>
+                <td>Applicant ID</td>
+                <td>{{$detailApk->user_id}}</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
                 <td>Status</td>
                 <td>{{$detailApk->status}}</td>
               </tr>
@@ -71,11 +76,14 @@
                           <input type="text" class="form-control" id="duration" name="Duration" required>
                         </div>
                         <div class="form-group">
-                        <input type="hidden" class="form-control" id="unitID" name="UnitID" value="{{$detailApk->residenceID}}">
+                          <input type="hidden" class="form-control" id="applicationID" name="applicationID" value="{{$detailApk->id}}">
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" class="form-control" id="status" name="status" value="Allocated">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="submit" id="approve" class="btn btn-primary">Allocate</button>
                         </div>
                     </form>
                 </div>    
@@ -84,6 +92,34 @@
     </div>
   </div>
   @include('sweetalert::alert')
+
+  <script>
+    $('.reject').on('click',function(e){
+      e.preventDefault();
+      const rejectButton = $(this).attr('href');
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "This Application will be Rejected!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#09bf25',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Reject!'
+        }).then((result) => {
+        if (result.value) {
+          document.location.href = rejectButton;
+        }else{
+          Swal.fire({
+          title: 'Canceled!',
+          icon: 'error',
+          timer: 1300,
+          showConfirmButton: false, 
+          })
+        }
+      })
+    });
+
+  </script>
 
 
   <!-- Optional JavaScript -->

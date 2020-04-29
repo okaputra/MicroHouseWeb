@@ -137,7 +137,10 @@ class HousingController extends Controller
             'date_from'=>$request->allocationDate,
             'date_end'=>$request->endDateAlo,
             'duration'=>$request->Duration,
-            'unit_id'=>$request->UnitID
+            'unit_id'=>$request->applicationID
+        ]);
+        DB::table('table_application')->where('id','=',$request->applicationID)->update([
+            'status'=>$request->status,
         ]);
         return redirect('/application')->with('success','Allocation Successfully');
     }
