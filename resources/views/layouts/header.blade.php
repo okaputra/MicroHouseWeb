@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -14,35 +14,37 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/awe-booking-font.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/awe-booking-font.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css')}}">
 
     <!-- MY FONTS -->
-    <script src="js/sweetalert2.all.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="{{ asset('js/sweetalert2.all.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js')}}"></script>
 
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" type="text/css" href="css/stylego.css">
-    <link rel="stylesheet" type="text/css" href="css/demogo.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/stylego.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/demogo.css')}}">
 
     <!-- Admin CSS -->
     <!-- simplebar CSS-->
-    <link href="officerAsset/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+    <link href="{{ asset('officerAsset/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet"/>
     <!-- Bootstrap core CSS-->
-    <link href="officerAsset/assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{{ asset('officerAsset/assets/css/bootstrap.min.css')}}" rel="stylesheet"/>
     <!-- animate CSS-->
-    <link href="officerAsset/assets/css/animate.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('officerAsset/assets/css/animate.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Icons CSS-->
-    <link href="officerAsset/assets/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('officerAsset/assets/css/icons.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Sidebar CSS-->
-    <link href="officerAsset/assets/css/sidebar-menu.css" rel="stylesheet"/>
+    <link href="{{ asset('officerAsset/assets/css/sidebar-menu.css')}}" rel="stylesheet"/>
     <!-- Custom Style-->
-    <link href="officerAsset/assets/css/app-style.css" rel="stylesheet"/>
+    <link href="{{ asset('officerAsset/assets/css/app-style.css')}}" rel="stylesheet"/>
     
     
 
      <!-- MY CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
 
     <title>MicroHouse|Dashboard</title>
 </head>

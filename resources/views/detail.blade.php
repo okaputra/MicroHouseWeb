@@ -52,7 +52,7 @@
             </div>
             
             <div>
-              <table class="table table-borderless" style="margin-top:81px;margin-right:276px; border-left:1px solid grey;">
+              <table class="table table-borderless" style="margin-top:81px;margin-right:194px; border-left:1px solid grey;">
                 <thead>
                   <tr>
                     
