@@ -3,63 +3,72 @@
 
 <div class="container">
   <div class="row" style="margin-top:109px">
-      @foreach ($residence as $rs)
-      <form action="/updateResidence" method="POST" style="width:100%"  enctype="multipart/form-data">
-          {{ csrf_field() }}
-            <div class="form-group">
-              <label for="HouseName">House Name</label>
-              <input type="hidden" class="form-control" id="address" value="{{$rs->id}}" name="id">
-              <input type="housename" class="form-control" id="hsname" value="{{$rs->HouseName}}" name="hsNamee">
+          <div class="row">
+            <div class="col-lg-6">
+               <div class="card" style="width:1141px">
+                 <div class="card-body">
+                 <div class="card-title text-primary">FORM UPDATE RESIDENCE</div>
+                 <hr>
+                 @foreach ($residence as $rs)
+                 <form action="/updateResidence" method="POST" style="width:100%"  enctype="multipart/form-data">
+                     {{ csrf_field() }}
+                       <div class="form-group">
+                         <label for="HouseName">House Name</label>
+                         <input type="hidden" class="form-control" id="address" value="{{$rs->id}}" name="id">
+                         <input type="housename" class="form-control" id="hsname" value="{{$rs->HouseName}}" name="hsNamee">
+                       </div>
+                       <div class="form-group">
+                         <label for="address">Address</label>
+                         <input type="address" class="form-control" id="address" value="{{$rs->Address}}" name="adrr">
+                       </div>
+                       <div class="form-group">
+                         <label for="NumUnit">Number of Unit</label>
+                         <input type="NumUnit" class="form-control" id="NumUnit" value="{{$rs->UnitNumber}}" name="nouu">
+                       </div>
+                       <div class="form-group">
+                         <label for="SizePerUnit">Size per Unit</label>
+                         <input type="SizePerUnit" class="form-control" id="SizePerUnit" value="{{$rs->SizeUnit}}" name="spuu">
+                       </div>
+                       <div class="form-group">
+                         <label for="MonthlyRental">Monthly Rental</label>
+                         <input type="MonthlyRental" class="form-control" id="MonthlyRental" value="{{$rs->MonthlyRental}}" name="mRnn">
+                       </div>
+                       <div class="form-group">
+                         <label for="availability">Availability</label>
+                         <input type="availability" class="form-control" id="availability" value="{{$rs->Availability}}" name="avaa">
+                       </div>
+                       <div class="form-group">
+                         <label for="bedroom">Bedroom</label>
+                         <input type="bedroom" class="form-control" id="bedroom" value="{{$rs->Bedroom}}" name="bedd">
+                       </div>
+                       <div class="form-group">
+                         <label for="bathroom">Bathroom</label>
+                         <input type="bathroom" class="form-control" id="bathroom" value="{{$rs->Bathroom}}" name="bathh">
+                       </div>
+                       <div class="form-group">
+                         <label for="livingroom">Living room</label>
+                         <input type="livingroom" class="form-control" id="livingroom" value="{{$rs->livingRoom}}" name="livv">
+                       </div>
+                       <div class="form-group">
+                         <label for="garage">Garage</label>
+                         <input type="garage" class="form-control" id="garage" value="{{$rs->Garage}}" name="garr">
+                       </div>
+                       <div class="form-group">
+                         <label for="pool">Pool</label>
+                         <input type="pool" class="form-control" id="pool" value="{{$rs->Pool}}" name="poll">
+                       </div>
+                         <div class="form-group">
+                           <label for="residencefoto">Residence Photo</label>
+                           <input type="file" class="form-control-file" value="{{ url('/data_file/'.$rs->Image) }}" id="residencefoto" name="filee" required>
+                         </div>
+                         <div class="form-group">
+                          <button type="submit" class="btn btn-primary shadow-primary px-5"><i class="icon-lock"></i>UPDATE</button>
+                        </div>
+                </form>
+                @endforeach
+               </div>
+               </div>
             </div>
-            <div class="form-group">
-              <label for="address">Address</label>
-              <input type="address" class="form-control" id="address" value="{{$rs->Address}}" name="adrr">
-            </div>
-            <div class="form-group">
-              <label for="NumUnit">Number of Unit</label>
-              <input type="NumUnit" class="form-control" id="NumUnit" value="{{$rs->UnitNumber}}" name="nouu">
-            </div>
-            <div class="form-group">
-              <label for="SizePerUnit">Size per Unit</label>
-              <input type="SizePerUnit" class="form-control" id="SizePerUnit" value="{{$rs->SizeUnit}}" name="spuu">
-            </div>
-            <div class="form-group">
-              <label for="MonthlyRental">Monthly Rental</label>
-              <input type="MonthlyRental" class="form-control" id="MonthlyRental" value="{{$rs->MonthlyRental}}" name="mRnn">
-            </div>
-            <div class="form-group">
-              <label for="availability">Availability</label>
-              <input type="availability" class="form-control" id="availability" value="{{$rs->Availability}}" name="avaa">
-            </div>
-            <div class="form-group">
-              <label for="bedroom">Bedroom</label>
-              <input type="bedroom" class="form-control" id="bedroom" value="{{$rs->Bedroom}}" name="bedd">
-            </div>
-            <div class="form-group">
-              <label for="bathroom">Bathroom</label>
-              <input type="bathroom" class="form-control" id="bathroom" value="{{$rs->Bathroom}}" name="bathh">
-            </div>
-            <div class="form-group">
-              <label for="livingroom">Living room</label>
-              <input type="livingroom" class="form-control" id="livingroom" value="{{$rs->livingRoom}}" name="livv">
-            </div>
-            <div class="form-group">
-              <label for="garage">Garage</label>
-              <input type="garage" class="form-control" id="garage" value="{{$rs->Garage}}" name="garr">
-            </div>
-            <div class="form-group">
-              <label for="pool">Pool</label>
-              <input type="pool" class="form-control" id="pool" value="{{$rs->Pool}}" name="poll">
-            </div>
-              <div class="form-group">
-                <label for="residencefoto">Residence Photo</label>
-                <input type="file" class="form-control-file" value="{{ url('/data_file/'.$rs->Image) }}" id="residencefoto" name="filee" required>
-              </div>
-              <div class="footer">
-                <button type="submit" class="btn btn-primary">Update</button>
-              </div>
-          </form>
-          @endforeach
   </div>
   </div>
   </div>

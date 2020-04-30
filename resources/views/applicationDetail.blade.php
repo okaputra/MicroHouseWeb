@@ -5,7 +5,7 @@
     <div class="row" style="margin-top:109px">
           {{-- show when user login as applicant --}}
           @if(auth()->user()->roles=='applicant')
-            <a href="/editApplication/{{$detailApk->id}}" class="btn btn-success my-3">Edit Application Detail</a>
+            <a href="/editApplication/{{$detailApk->id}}" class="btn btn-warning my-3">Edit Application Detail</a>
           @endif
 
           {{-- show when user login as officer --}}
@@ -13,47 +13,59 @@
             <a href="/submitAllocate/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModalAllocateScrollable">Allocate</a>
             <a href="/reject/{{$detailApk->id}}" style="margin-left:5px" class="btn btn-danger my-3 reject" data-toggle="modal" data-target="#exampleModalRejectScrollable">REJECT</a>
           @endif
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">List</th>
-                <th scope="col">Desciption</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Application Date</td>
-                <td>{{$detailApk->applicationDate}}</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Required Month</td>
-                <td>{{$detailApk->requiredMonth}}</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Required Year</td>
-                <td>{{$detailApk->requiredYear}}</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Residence ID</td>
-                <td>{{$detailApk->residenceID}}</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Applicant ID</td>
-                <td>{{$detailApk->user_id}}</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Status</td>
-                <td>{{$detailApk->status}}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="col-lg-12" style="margin-left:-15px">
+         
+            <div class="card">
+              <div class="card-header text-uppercase text-success">DETAIL APPLICATION INFORMATION</div>
+              <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table">
+                    <thead class="thead-success">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">LIST</th>
+                        <th scope="col">DESCRIPTION</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Application Date</td>
+                        <td>{{$detailApk->applicationDate}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Required Month</td>
+                        <td>{{$detailApk->requiredMonth}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Required Year</td>
+                        <td>{{$detailApk->requiredYear}}</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">4</th>
+                      <td>Residence ID</td>
+                      <td>{{$detailApk->residenceID}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Applicant ID</td>
+                      <td>{{$detailApk->user_id}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">6</th>
+                      <td>Status</td>
+                      <td>{{$detailApk->status}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+               </div>
+              </div>
+            </div>
+          </div>
+
+
           <!-- Modal -->
           <div class="modal fade" id="exampleModalRejectScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
