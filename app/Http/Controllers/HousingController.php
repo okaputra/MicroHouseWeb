@@ -45,7 +45,6 @@ class HousingController extends Controller
 
         $fileDestination = 'data_file';
         $file->move($fileDestination,$file_name);
-
         DB::table('residence')->insert([
             'HouseName'=>$request->hsName,
             'Address'=>$request->adr,
@@ -60,6 +59,15 @@ class HousingController extends Controller
             'Pool'=>$request->pol,
             'Image'=>$file_name,
         ]);
+        $idres=DB::getPDO()->lastInsertId();
+        for($i=0;$i<$request->nou;$i++){
+            DB::table('unit')->insert([
+                'unit_no'=>$i+1,
+                'availability'=>$request->ava,
+                'residence_id'=>$idres
+            ]);
+            
+        }
         return redirect('/rent')->with('success','Set up Residence Successfully');
     }
 
@@ -117,7 +125,16 @@ class HousingController extends Controller
             'Pool'=>$request->poll,
             'Image'=>$file_name,
         ]);
+        for($i=1;$i<=$request->nouu;$i++){
+            DB::table('unit')->insert([
+                'unit_no'=>$i+1,
+                'availability'=>$request->avaa,
+                'residence_id'=>$request->id
+            ]);
+            
+        }
         return redirect('/rent')->with('success','Data Updated Successfully');
+        
     }
 
     /**
@@ -141,6 +158,9 @@ class HousingController extends Controller
         ]);
         DB::table('table_application')->where('id','=',$request->applicationID)->update([
             'status'=>$request->status,
+        ]);
+        DB::table('residence')->where('id','=',$request->resID)->update([
+            'Availability'=>$request->availability,
         ]);
         return redirect('/application')->with('success','Allocation Successfully');
     }

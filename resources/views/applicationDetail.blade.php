@@ -123,7 +123,13 @@
                           <input type="hidden" class="form-control" id="applicationID" name="applicationID" value="{{$detailApk->id}}">
                         </div>
                         <div class="form-group">
+                          <input type="hidden" class="form-control" id="resID" name="resID" value="{{$detailApk->residenceID}}">
+                        </div>
+                        <div class="form-group">
                           <input type="hidden" class="form-control" id="status" name="status" value="Allocated">
+                        </div>
+                        <div class="form-group">
+                          <input type="hidden" class="form-control" id="availability" name="availability" value="Sold Out">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

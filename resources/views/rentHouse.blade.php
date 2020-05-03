@@ -47,8 +47,7 @@
                 <input type="MonthlyRental" class="form-control" id="MonthlyRental" name="mRn" required>
               </div>
               <div class="form-group">
-                <label for="availability">Availability</label>
-                <input type="availability" class="form-control" id="availability" name="ava" required>
+                <input type="hidden" class="form-control" id="availability" name="ava" value="Available">
               </div>
               <div class="form-group">
                 <label for="bedroom">Bedroom</label>
@@ -120,66 +119,45 @@
     @endif
 
     @if(auth()->user()->roles=='applicant')
-    {{-- <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th width="1%" style="text-align:center">Preview</th>
-          <th style="text-align:center">Information</th>
-          <th style="text-align:center">Monthly Rental</th>
-          <th style="width:145px;text-align:center">OPTION</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($residence as $rs)
-        <tr>
-          <td><img width="150px" src="{{ url('/data_file/'.$rs->Image) }}"></td>
-          <td style="text-align:center">{{$rs->HouseName}}</td>
-          <td style="text-align:center">{{$rs->MonthlyRental}}</td>
-          <td><a href="/showDetail/{{ $rs->id }}" class="btn btn-outline-secondary btn-square waves-effect waves-light m-1"><i class="fa fa-search"></i>DETAIL</a></td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table> --}}
-
-    @foreach($residence as $rs)
-    <div class="hotel-item">
-      <div class="item-media">
-          <div class="image-cover">
-              <img src="{{ url('/data_file/'.$rs->Image) }}" alt="">
-          </div>
-      </div>
-      <div class="item-body">
-          <div class="item-title">
-              <h2>
-                  <a href="hotel-detail.html">{{$rs->HouseName}}</a>
-              </h2>
-          </div>
-          <div class="item-hotel-star">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-          </div>
-          <div class="item-address">
-            <img style="height:19px" src="{{url('images/mrk.png')}}" alt="">
-              {{$rs->Address}}
-          </div>
-          <div class="item-footer">
-            <div class="item-rate">
-              <span>{{$rs->Availability}}</span>
+      @foreach($residence as $rs)
+      <div class="hotel-item">
+        <div class="item-media">
+            <div class="image-cover">
+                <img src="{{ url('/data_file/'.$rs->Image) }}" alt="">
             </div>
-          </div>
-      </div>
-      <div class="item-price-more">
-          <div class="price">
-              per month
-              <span class="amount">{{$rs->MonthlyRental}}</span>
-          </div>
-          <a href="/showDetail/{{ $rs->id }}" class="awe-btn">DETAIL INFO</a>
-      </div>
-  </div>
-  @endforeach
+        </div>
+        <div class="item-body">
+            <div class="item-title">
+                <h2>
+                    <a href="/showDetail/{{ $rs->id }}">{{$rs->HouseName}}</a>
+                </h2>
+            </div>
+            <div class="item-hotel-star">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="item-address">
+              <img style="height:19px" src="{{url('images/mrk.png')}}" alt="">
+                {{$rs->Address}}
+            </div>
+            <div class="item-footer">
+              <div class="item-rate">
+                <span>{{$rs->Availability}}</span>
+              </div>
+            </div>
+        </div>
+        <div class="item-price-more">
+            <div class="price">
+                per month
+                <span class="amount">{{$rs->MonthlyRental}}</span>
+            </div>
+            <a href="/showDetail/{{ $rs->id }}" class="awe-btn">DETAIL INFO</a>
+        </div>
+    </div>
+    @endforeach
   <!-- END / ITEM -->
   @endif
 
